@@ -1,0 +1,670 @@
+.team-page {
+  min-height: 100vh;
+}
+
+.team-hero {
+  background: linear-gradient(135deg, #1282e4 0%, #1418e7 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.team-hero .eyebrow {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.team-hero h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
+}
+
+.team-hero .subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.executive-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.department-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.advisors-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.executive-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.leadership-section {
+  margin-bottom: 4rem;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.leadership-card {
+  max-width: 350px;
+  width: 100%;
+}
+
+.other-members-section {
+  margin-top: 2rem;
+}
+
+.three-column {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.member-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.member-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.executive-card {
+  border: 2px solid #4facfe;
+}
+
+.member-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover .member-image img {
+  transform: scale(1.05);
+}
+
+.member-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.member-card:hover .member-overlay {
+  opacity: 1;
+}
+
+.member-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.email-link {
+  background: linear-gradient(135deg, #ea4335, #fbbc05);
+  color: white;
+}
+
+.email-link:hover {
+  background: linear-gradient(135deg, #d33b2c, #f9ab00);
+}
+
+.linkedin-link {
+  background: linear-gradient(135deg, #0077b5, #00a0dc);
+  color: white;
+}
+
+.linkedin-link:hover {
+  background: linear-gradient(135deg, #005885, #0077b5);
+}
+
+.member-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.member-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.position {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4facfe;
+  margin-bottom: 0.5rem;
+}
+
+.department {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.bio {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.advisors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.advisor-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.advisor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.advisor-image {
+  flex-shrink: 0;
+}
+
+.advisor-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.advisor-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.25rem;
+}
+
+.advisor-content .position {
+  font-size: 1rem;
+  color: #4facfe;
+  margin-bottom: 0.25rem;
+}
+
+.advisor-content .department {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.advisor-content .bio {
+  font-size: 0.875rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+.join-team-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.join-team-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.join-team-content p {
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: white;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #667eea;
+}
+
+@media (max-width: 1024px) {
+  .three-column {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 100px 0 60px;
+  }
+  
+  .team-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .executive-section,
+  .department-section,
+  .advisors-section {
+    padding: 60px 0;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .executive-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 350px;
+  }
+  
+  .three-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .advisors-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .advisor-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .join-team-section {
+    padding: 60px 0;
+  }
+  
+  .join-team-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 200px;
+  }
+}
+
+/* Avenue Directors Styles */
+.avenue-directors-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.avenue-grid-flat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avenue-grid-flat .avenue-card {
+  flex: 0 0 calc(33.333% - 1.67rem);
+  max-width: 360px;
+  min-width: 300px;
+}
+
+.avenue-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  border: 2px solid #ffd700;
+  width: 100%;
+  max-width: 320px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.avenue-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+.avenue-card .member-image {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avenue-card .member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.avenue-card:hover .member-image img {
+  transform: scale(1.05);
+}
+
+.avenue-card .member-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.avenue-card:hover .member-overlay {
+  opacity: 1;
+}
+
+.avenue-card .member-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.avenue-card .social-link {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.avenue-card .social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.avenue-card .social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.avenue-card .email-link {
+  background: linear-gradient(135deg, #ea4335, #fbbc05);
+  color: white;
+}
+
+.avenue-card .email-link:hover {
+  background: linear-gradient(135deg, #d33b2c, #f9ab00);
+}
+
+.avenue-card .linkedin-link {
+  background: linear-gradient(135deg, #0077b5, #00a0dc);
+  color: white;
+}
+
+.avenue-card .linkedin-link:hover {
+  background: linear-gradient(135deg, #006fa6, #0091ca);
+}
+
+.avenue-card .member-content {
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.avenue-card .member-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avenue-card .member-content .position {
+  color: #666;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  min-height: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avenue-card .member-content .avenue {
+  color: #1e3c72;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 1px solid #ffd700;
+  line-height: 1.3;
+}
+
+.avenue-card .member-content .bio {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Responsive Design for Avenue Directors */
+@media (max-width: 1024px) {
+  .avenue-grid-flat .avenue-card {
+    flex: 0 0 calc(50% - 1.25rem);
+  }
+  
+  .avenue-grid-flat {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .avenue-directors-section {
+    padding: 60px 0;
+  }
+  
+  .avenue-grid-flat {
+    gap: 2rem;
+    max-width: 600px;
+  }
+  
+  .avenue-grid-flat .avenue-card {
+    flex: 0 0 calc(50% - 1rem);
+    min-width: 280px;
+  }
+  
+  .avenue-card {
+    max-width: 100%;
+    width: 100%;
+    min-height: 400px;
+  }
+  
+  .avenue-card .member-image {
+    height: 250px;
+  }
+  
+  .avenue-card .member-content {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .avenue-grid-flat {
+    gap: 1.5rem;
+    max-width: 360px;
+  }
+  
+  .avenue-grid-flat .avenue-card {
+    flex: 0 0 100%;
+    min-width: auto;
+  }
+  
+  .avenue-card {
+    width: 100%;
+    min-height: 380px;
+  }
+  
+  .avenue-card .member-image {
+    height: 220px;
+  }
+}

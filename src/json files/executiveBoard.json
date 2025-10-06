@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Leo Shaman Karunarathne",
+    "position": "President",
+    "image": "/Pic/Exco/Shamen.jpg",
+    "bio": "Leading the Leo Society with passion for community service and youth development.",
+    "email": "president@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/shamankarunarathne"
+  },
+  {
+    "id": 2,
+    "name": "Leo Maleesha",
+    "position": "Past President",
+    "image": "/Pic/Exco/Maleesha.jpg",
+    "bio": "Honoring past leadership and guiding the society with experience and wisdom.",
+    "email": "pastpresident@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/pastpresident"
+  },
+  {
+    "id": 3,
+    "name": "Leo Nethmie Nimesha",
+    "position": "Vice President",
+    "image": "/Pic/Exco/Nethmi.jpg",
+    "bio": "Dedicated to empowering youth and fostering impactful service initiatives.",
+    "email": "vp1@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/nethmienimesha"
+  },
+  {
+    "id": 4,
+    "name": "Leo Sahan Wijendra",
+    "position": "Vice President",
+    "image": "/Pic/Exco/Sahan.jpg",
+    "bio": "Striving to build unity and creativity within the Leo community.",
+    "email": "vp2@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/sahanwijendra"
+  },
+  {
+    "id": 5,
+    "name": "Leo Amayuru Senadheera",
+    "position": "Secretary",
+    "image": "/Pic/Exco/Amayuru.jpg",
+    "bio": "Ensuring smooth communication and efficient documentation across all club activities.",
+    "email": "secretary@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/amayurusenadheera"
+  },
+  {
+    "id": 6,
+    "name": "Leo Bhawana Ariyarathne",
+    "position": "Assistant Secretary",
+    "image": "/Pic/Exco/Bhawana.jpg",
+    "bio": "Supporting administration and helping the club stay organized and active.",
+    "email": "asecretary@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/bhawanariyarathne"
+  },
+  {
+    "id": 7,
+    "name": "Leo Dunith Fernando",
+    "position": "Treasurer",
+    "image": "/Pic/Exco/Dunith.jpg",
+    "bio": "Managing club finances responsibly to ensure transparency and growth.",
+    "email": "treasurer@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/dunithfernando"
+  },
+  {
+    "id": 8,
+    "name": "Leo Thisen Lakdinu",
+    "position": "Assistant Treasurer",
+    "image": "/Pic/Exco/Thisen.jpg",
+    "bio": "Assisting in financial planning and supporting all budgetary operations.",
+    "email": "atreasurer@leosocietyuop.org",
+    "linkedin": "https://linkedin.com/in/thisenlakdinu"
+  }
+]

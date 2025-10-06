@@ -1,0 +1,305 @@
+/* Base animation styles */
+.animate-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.animate-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Slide In Animations */
+.animate-slide-in-left {
+  transform: translateX(-50px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-in-left.animate-visible {
+  transform: translateX(0);
+}
+
+.animate-slide-in-right {
+  transform: translateX(50px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-in-right.animate-visible {
+  transform: translateX(0);
+}
+
+.animate-slide-in-up {
+  transform: translateY(30px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-in-up.animate-visible {
+  transform: translateY(0);
+}
+
+.animate-slide-in-down {
+  transform: translateY(-30px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-slide-in-down.animate-visible {
+  transform: translateY(0);
+}
+
+/* Fade In Animations */
+.animate-fade-in {
+  transition: opacity 0.6s ease-out;
+}
+
+.animate-fade-in-up {
+  transform: translateY(20px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-fade-in-up.animate-visible {
+  transform: translateY(0);
+}
+
+.animate-fade-in-down {
+  transform: translateY(-20px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-fade-in-down.animate-visible {
+  transform: translateY(0);
+}
+
+.animate-fade-in-left {
+  transform: translateX(-20px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-fade-in-left.animate-visible {
+  transform: translateX(0);
+}
+
+.animate-fade-in-right {
+  transform: translateX(20px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-fade-in-right.animate-visible {
+  transform: translateX(0);
+}
+
+/* Scale Animations */
+.animate-scale-in {
+  transform: scale(0.9);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.6s ease-out;
+}
+
+.animate-scale-in.animate-visible {
+  transform: scale(1);
+}
+
+.animate-scale-in-up {
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.6s ease-out;
+}
+
+.animate-scale-in-up.animate-visible {
+  transform: scale(1) translateY(0);
+}
+
+/* Rotation Animations */
+.animate-rotate-in {
+  transform: rotate(-5deg) scale(0.9);
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.6s ease-out;
+}
+
+.animate-rotate-in.animate-visible {
+  transform: rotate(0deg) scale(1);
+}
+
+/* Bounce Animation */
+.animate-bounce-in {
+  transform: scale(0.3);
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+              opacity 0.6s ease-out;
+}
+
+.animate-bounce-in.animate-visible {
+  transform: scale(1);
+}
+
+/* Elastic Animation */
+.animate-elastic-in {
+  transform: scale(0.8);
+  transition: transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.6s ease-out;
+}
+
+.animate-elastic-in.animate-visible {
+  transform: scale(1);
+}
+
+/* Stagger Animation for multiple items */
+.animate-stagger-item {
+  transform: translateY(30px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-stagger-item.animate-visible {
+  transform: translateY(0);
+}
+
+/* Stagger delays for multiple items */
+.animate-stagger-item:nth-child(1) { transition-delay: 0ms; }
+.animate-stagger-item:nth-child(2) { transition-delay: 100ms; }
+.animate-stagger-item:nth-child(3) { transition-delay: 200ms; }
+.animate-stagger-item:nth-child(4) { transition-delay: 300ms; }
+.animate-stagger-item:nth-child(5) { transition-delay: 400ms; }
+.animate-stagger-item:nth-child(6) { transition-delay: 500ms; }
+.animate-stagger-item:nth-child(7) { transition-delay: 600ms; }
+.animate-stagger-item:nth-child(8) { transition-delay: 700ms; }
+.animate-stagger-item:nth-child(9) { transition-delay: 800ms; }
+.animate-stagger-item:nth-child(10) { transition-delay: 900ms; }
+
+/* Special effects for different content types */
+
+/* Hero section animations */
+.hero-title-animation {
+  transform: translateY(50px) scale(0.9);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.8s ease-out;
+}
+
+.hero-title-animation.animate-visible {
+  transform: translateY(0) scale(1);
+}
+
+/* Card hover enhancements with initial animation */
+.card-animation {
+  transform: translateY(20px);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s ease-out,
+              box-shadow 0.3s ease;
+}
+
+.card-animation.animate-visible {
+  transform: translateY(0);
+}
+
+.card-animation.animate-visible:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Stats counter animation */
+.stats-counter {
+  font-variant-numeric: tabular-nums;
+  transition: all 0.3s ease;
+}
+
+/* Image animations */
+.image-animation {
+  transform: scale(1.1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.8s ease-out;
+}
+
+.image-animation.animate-visible {
+  transform: scale(1);
+}
+
+/* Button animations */
+.button-animation {
+  transform: translateY(10px);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.5s ease-out;
+}
+
+.button-animation.animate-visible {
+  transform: translateY(0);
+}
+
+/* Gallery grid animations */
+.gallery-item-animation {
+  transform: scale(0.8) rotate(2deg);
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.6s ease-out;
+}
+
+.gallery-item-animation.animate-visible {
+  transform: scale(1) rotate(0deg);
+}
+
+/* Team member card animations */
+.team-member-animation {
+  transform: translateY(40px) scale(0.95);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s ease-out;
+}
+
+.team-member-animation.animate-visible {
+  transform: translateY(0) scale(1);
+}
+
+/* Project card animations */
+.project-card-animation {
+  transform: translateX(-30px) rotateY(-10deg);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              opacity 0.6s ease-out;
+  transform-origin: center center;
+}
+
+.project-card-animation.animate-visible {
+  transform: translateX(0) rotateY(0deg);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-slide-in-up,
+  .animate-slide-in-down,
+  .animate-fade-in-up,
+  .animate-fade-in-down,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-scale-in,
+  .animate-scale-in-up,
+  .animate-rotate-in,
+  .animate-bounce-in,
+  .animate-elastic-in,
+  .animate-stagger-item,
+  .hero-title-animation,
+  .card-animation,
+  .image-animation,
+  .button-animation,
+  .gallery-item-animation,
+  .team-member-animation,
+  .project-card-animation {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+}
+
+/* Utility classes for custom delays */
+.animate-delay-100 { transition-delay: 100ms; }
+.animate-delay-200 { transition-delay: 200ms; }
+.animate-delay-300 { transition-delay: 300ms; }
+.animate-delay-400 { transition-delay: 400ms; }
+.animate-delay-500 { transition-delay: 500ms; }
+.animate-delay-600 { transition-delay: 600ms; }
+.animate-delay-700 { transition-delay: 700ms; }
+.animate-delay-800 { transition-delay: 800ms; }
+.animate-delay-900 { transition-delay: 900ms; }
+.animate-delay-1000 { transition-delay: 1000ms; }

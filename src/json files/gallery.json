@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Board of Directors Transition 24-25",
+    "category": "team",
+    "image": "/Pic/Gallery/24_25 bod transition.jpg",
+    "description": "Celebrating the transition of leadership for the 2024-25 academic year."
+  },
+  {
+    "id": 2,
+    "title": "Annual Ceremony",
+    "category": "events",
+    "image": "/Pic/Gallery/Annual_ceramini.jpg",
+    "description": "Our annual ceremony celebrating achievements and milestones."
+  },
+  {
+    "id": 3,
+    "title": "Award Ceremony",
+    "category": "events",
+    "image": "/Pic/Gallery/Award_ceramany_1.jpg",
+    "description": "Recognizing outstanding contributions and achievements of our members."
+  },
+  {
+    "id": 4,
+    "title": "Award Ceremony Highlights",
+    "category": "events",
+    "image": "/Pic/Gallery/Award_ceramany_2.jpg",
+    "description": "More memorable moments from our award ceremony celebration."
+  },
+  {
+    "id": 5,
+    "title": "Board of Directors 2025",
+    "category": "team",
+    "image": "/Pic/Gallery/BoD_2025.jpg",
+    "description": "Meet our dedicated Board of Directors for the year 2025."
+  },
+  {
+    "id": 6,
+    "title": "Community Service Project",
+    "category": "projects",
+    "image": "/Pic/Gallery/Project_1.jpg",
+    "description": "Making a positive impact in our community through dedicated service."
+  },
+  {
+    "id": 7,
+    "title": "Avurudu Cultural Festival",
+    "category": "events",
+    "image": "/Pic/Gallery/avurudu_celebration.jpg",
+    "description": "Leo members celebrating Sinhala and Tamil New Year with vibrant traditional sarongs and sarees at SLIM Campus."
+  },
+  {
+    "id": 8,
+    "title": "Traditional Unity Prayer Ceremony",
+    "category": "events", 
+    "image": "/Pic/Gallery/prayer_ceremony.jpg",
+    "description": "Leo members in traditional attire participating in a unity prayer ceremony, showcasing cultural harmony and brotherhood."
+  },
+  {
+    "id": 9,
+    "title": "Avurudu Group Photo Session",
+    "category": "events",
+    "image": "/Pic/Gallery/avurudu_group.jpg",
+    "description": "A beautiful group photo of Leo members in colorful traditional Sri Lankan attire during Avurudu festivities."
+  }
+]

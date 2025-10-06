@@ -1,0 +1,333 @@
+/* Page spacing to account for fixed Navbar */
+.about-page { padding-top: 70px; }
+
+/* Shared container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero */
+.about-hero {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #fff;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+.about-hero h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: 12px;
+}
+.subtitle {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+  opacity: 0.95;
+}
+
+/* Story */
+.story-section { background: #f8f9fa; padding: 80px 0; }
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+}
+.story-text h2 { color: #1e3c72; font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); line-height: var(--line-height-tight); margin-bottom: 15px; }
+.story-text p { font-size: var(--font-size-2xl); font-weight: var(--font-weight-normal); line-height: var(--line-height-relaxed); color: #444; margin-bottom: 20px; }
+.highlights { list-style: none; padding: 0; }
+.highlights li {
+  padding-left: 28px;
+  position: relative;
+  margin: 10px 0;
+}
+.highlights li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #1e3c72;
+}
+
+.impact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  align-self: start;
+}
+.impact-card h3 { color: #1e3c72; margin-bottom: 15px; }
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 15px 0 10px;
+}
+.impact-item { text-align: center; }
+.number { font-size: 2rem; font-weight: 800; color: #1e3c72; }
+.label { display: block; color: #666; font-size: 0.95rem; }
+.mini-note { color: #999; font-size: 0.85rem; }
+
+/* Values */
+.values-section { background: #fff; padding: 80px 0; }
+.values-section h2 { text-align: center; color: #1e3c72; font-size: 2.2rem; margin-bottom: 35px; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.value-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+.value-card:hover { transform: translateY(-4px); }
+.value-card .icon { font-size: 2rem; margin-bottom: 10px; }
+.value-card h3 { color: #1e3c72; margin-bottom: 8px; }
+.value-card p { color: #555; }
+
+/* Board */
+.board-section { background: #f8f9fa; padding: 80px 0; }
+.board-section h2 { text-align: center; color: #1e3c72; font-size: 2.2rem; margin-bottom: 10px; }
+.section-note { text-align: center; color: #888; margin-bottom: 28px; }
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.member-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: #ffd700;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+.member-card h4 { margin: 6px 0 2px; color: #1e3c72; }
+.member-card p { color: #666; font-size: 0.95rem; }
+
+/* Timeline */
+.timeline-section { background: #fff; padding: 80px 0; }
+.timeline-section h2 { text-align: center; color: #1e3c72; font-size: 2.2rem; margin-bottom: 30px; }
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-left: 20px;
+  border-left: 3px solid #e6e6e6;
+}
+.timeline-item { position: relative; padding: 14px 0 14px 16px; }
+.timeline-item .dot {
+  position: absolute;
+  left: -9px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  background: #ffd700;
+  border: 3px solid #1e3c72;
+  border-radius: 50%;
+}
+.timeline-item h4 { margin: 0 0 4px; color: #1e3c72; }
+.timeline-item p { margin: 0; color: #555; }
+
+/* CTA */
+.about-cta { background: #1e3c72; color: #fff; padding: 70px 0; text-align: center; }
+.about-cta h2 { font-size: 2.2rem; margin-bottom: 8px; }
+.about-cta p { opacity: 0.95; margin-bottom: 22px; }
+.cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.primary-btn, .secondary-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+.primary-btn { background: #ffd700; color: #1e3c72; }
+.primary-btn:hover { transform: translateY(-2px); }
+.secondary-btn { background: transparent; color: #fff; border-color: #fff; }
+.secondary-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+/* Leo International Section */
+.leo-international-section {
+  background: white;
+  padding: 80px 0;
+}
+.international-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.international-content h2 {
+  color: #1e3c72;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.international-content p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+.benefits-list li {
+  padding: 8px 0 8px 30px;
+  position: relative;
+  font-size: 1.05rem;
+  color: #555;
+}
+.benefits-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+.international-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.stat-box {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+.stat-box h3 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  color: #ffd700;
+}
+.stat-box p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Why Join Section */
+.why-join-section {
+  background: #f8f9fa;
+  padding: 80px 0;
+}
+.why-join-section h2 {
+  text-align: center;
+  color: #1e3c72;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.benefit-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.benefit-card h3 {
+  color: #1e3c72;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Community Impact Section */
+.impact-section {
+  background: white;
+  padding: 80px 0;
+}
+.impact-section h2 {
+  text-align: center;
+  color: #1e3c72;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+.impact-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+.impact-area {
+  text-align: center;
+  padding: 30px 20px;
+}
+.impact-visual {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.impact-area h3 {
+  color: #1e3c72;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.impact-area p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .story-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .board-grid { grid-template-columns: 1fr 1fr; }
+  .international-grid { grid-template-columns: 1fr; gap: 40px; }
+  .benefits-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .impact-areas { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+@media (max-width: 600px) {
+  .about-hero h1 { font-size: 2.2rem; }
+  .values-grid { grid-template-columns: 1fr; }
+  .board-grid { grid-template-columns: 1fr; }
+  .impact-stats { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .impact-areas { grid-template-columns: 1fr; }
+  .international-stats { align-items: center; }
+  .why-join-section h2,
+  .impact-section h2 { font-size: 2rem; }
+}

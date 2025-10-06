@@ -1,0 +1,110 @@
+[
+    {
+      "id": 1,
+      "title": "ALPHA U 3.0",
+      "category": "Education",
+      "description": "An innovative educational program designed to enhance university students' leadership skills and academic excellence through collaborative learning and mentorship opportunities.",
+      "image": "/Pic/Project/ALPHA U 3.0.png",
+      "status": "Upcoming",
+      "impact": "50+ students empowered"
+    },
+    {
+      "id": 2,
+      "title": "Bloom & Blues",
+      "category": "Mental Health",
+      "description": "A mental health awareness and support initiative focusing on emotional well-being, stress management, and creating a supportive community for students and youth.",
+      "image": "/Pic/Project/Bloom & Blues.png",
+      "status": "Upcoming",
+      "impact": "30+ participants reached"
+    },
+    {
+      "id": 3,
+      "title": "Blooming Thoughts 🌸💜",
+      "category": "Personal Development",
+      "description": "A creative writing and expression workshop series that encourages self-reflection, creativity, and positive thinking among participants to foster personal growth.",
+      "image": "/Pic/Project/Blooming Thoughts 🌸💜.png",
+      "status": "Upcoming",
+      "impact": "25+ creative minds inspired"
+    },
+    {
+      "id": 4,
+      "title": "Dreams Over Drugs",
+      "category": "Social Awareness",
+      "description": "A comprehensive drug prevention and awareness campaign targeting youth, promoting healthy lifestyle choices and providing support for addiction recovery.",
+      "image": "/Pic/Project/Dreams Over Drugs.png",
+      "status": "Upcoming",
+      "impact": "75+ youth educated"
+    },
+    {
+      "id": 5,
+      "title": "EcoBiz",
+      "category": "Environment & Business",
+      "description": "An eco-entrepreneurship initiative that combines environmental sustainability with business innovation, encouraging green business solutions and sustainable practices.",
+      "image": "/Pic/Project/EcoBiz.png",
+      "status": "Upcoming",
+      "impact": "15+ green startups supported"
+    },
+    {
+      "id": 6,
+      "title": "Fiesta de Leos",
+      "category": "Cultural & Social",
+      "description": "An annual celebration and cultural festival organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
+      "image": "/Pic/Project/Fiesta de Leos.png",
+      "status": "Upcoming",
+      "impact": "150+ attendees celebrated"
+    },
+    {
+      "id": 7,
+      "title": "GEARHEADS 25 Collaboration",
+      "category": "Technology & Innovation",
+      "description": "A collaborative technology and innovation project bringing together multiple clubs to work on engineering solutions, robotics, and technical skill development for students.",
+      "image": "/Pic/Project/GEARHEADS 25 Collaboration Clubs.png",
+      "status": "Upcoming",
+      "impact": "40+ tech enthusiasts engaged"
+    },
+    {
+      "id": 8,
+      "title": "LEO Mini Hike",
+      "category": "Adventure & Wellness",
+      "description": "An outdoor adventure and fitness initiative promoting physical wellness, team building, and environmental appreciation through organized hiking activities and nature exploration.",
+      "image": "/Pic/Project/LEO Mini Hike .png",
+      "status": "Upcoming",
+      "impact": "35+ hikers participated"
+    },
+    {
+      "id": 9,
+      "title": "Pink Ribbon OC",
+      "category": "Health Awareness",
+      "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
+      "image": "/Pic/Project/Pink Ribbon OC.png",
+      "status": "Upcoming",
+      "impact": "120+ women screened"
+    },
+    {
+      "id": 10,
+      "title": "විදුතරණ 3.0",
+      "category": "Technology & Innovation",
+      "description": "An advanced technological innovation project focusing on electrical and electronic solutions, promoting STEM education and practical application of engineering concepts among students.",
+      "image": "/Pic/Project/විදුතරණ 3.0.png",
+      "status": "Completed",
+      "impact": "45+ students trained"
+    },
+    {
+      "id": 11,
+      "title": "විදුතරණ 4.0",
+      "category": "Technology & Innovation",
+      "description": "The fourth iteration of the flagship technology project, advancing digital innovation, IoT solutions, and smart technology implementation for community development and education.",
+      "image": "/Pic/Project/විදුතරණ 4.0.png",
+      "status": "Ongoing",
+      "impact": "60+ participants engaged"
+    },
+    {
+      "id": 12,
+      "title": "සෙනෙහසේ චාරිකා",
+      "category": "Community Service",
+      "description": "A compassionate community outreach program providing support, care, and essential services to underprivileged families and elderly community members with love and dedication.",
+      "image": "/Pic/Project/සෙනෙහසේ චාරිකා.png",
+      "status": "Upcoming",
+      "impact": "80+ families supported"
+    }
+  ]

@@ -1,0 +1,165 @@
+/* Additional utility updates for existing CSS files */
+
+/* Update common font-size values to use CSS variables */
+body {
+  font-family: var(--font-primary);
+}
+
+/* Override any remaining hardcoded values with consistent typography */
+h1, .hero-title, .section-title { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-5xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  line-height: var(--line-height-tight) !important;
+}
+
+h2, .subtitle { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-4xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  line-height: var(--line-height-tight) !important;
+}
+
+h3 { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-3xl) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: var(--line-height-snug) !important;
+}
+
+h4 { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-2xl) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: var(--line-height-snug) !important;
+}
+
+h5 { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-medium) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+h6 { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-medium) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+p, .body-text { 
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-relaxed) !important;
+}
+
+/* Button typography consistency */
+button, .btn, .cta-button, .primary-button, .secondary-button {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+/* Card and component typography */
+.card-title {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: var(--line-height-snug) !important;
+}
+
+.card-text, .card p {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-relaxed) !important;
+}
+
+/* Navigation typography */
+.nav-link, .nav-item, .navbar a {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-medium) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+/* Small text and captions */
+.small, .caption, .label, .tag {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+/* Extra small text */
+.xs, .micro {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-xs) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+/* Large text */
+.large, .lead {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-relaxed) !important;
+}
+
+/* Form elements */
+input, textarea, select {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-normal) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+/* Team member names and titles */
+.member-name, .team-name {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: var(--line-height-snug) !important;
+}
+
+.member-title, .team-title {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: var(--font-weight-medium) !important;
+  line-height: var(--line-height-normal) !important;
+}
+
+/* Project and event titles */
+.project-title, .event-title {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-2xl) !important;
+  font-weight: var(--font-weight-semibold) !important;
+  line-height: var(--line-height-snug) !important;
+}
+
+/* Stats and numbers */
+.stat-number, .number {
+  font-family: var(--font-primary) !important;
+  font-size: var(--font-size-5xl) !important;
+  font-weight: var(--font-weight-bold) !important;
+  line-height: var(--line-height-tight) !important;
+}
+
+/* Responsive overrides */
+@media (max-width: 768px) {
+  h1, .hero-title { 
+    font-size: var(--font-size-4xl) !important;
+  }
+  
+  h2, .subtitle { 
+    font-size: var(--font-size-3xl) !important;
+  }
+  
+  .stat-number, .number {
+    font-size: var(--font-size-4xl) !important;
+  }
+}
