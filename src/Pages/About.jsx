@@ -214,7 +214,7 @@ function About() {
         </section>
 
         {/* Timeline */}
-        <section className="timeline-section">
+        {/* <section className="timeline-section">
           <div className="container">
             <h2>Milestones</h2>
             <div className="timeline">
@@ -242,7 +242,7 @@ function About() {
             </div>
             <p className="section-note">Fill in accurate years and achievements.</p>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA */}
         <section className="about-cta">
