@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
-import Events from "./Pages/Events";
 import Team from "./Pages/Team";
 import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
@@ -34,7 +33,6 @@ function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/events" element={<Events />} />
             <Route path="/team" element={<Team />} />
             <Route path="/team/:teamType" element={<Team />} />
             <Route path="/gallery" element={<Gallery />} />

@@ -29,7 +29,11 @@ function Team() {
   const [headerRef, headerVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);
   const [leadershipRef, leadershipVisible] = useStaggerAnimation(2, 200);
   const [executiveRef, executiveVisible] = useStaggerAnimation(executiveBoard.filter(m => !['President', 'Past President'].includes(m.position)).length, 100);
-  const [avenueRef, avenueVisible] = useStaggerAnimation(avenuedirectors.length, 100);
+  
+  // Calculate total number of avenue directors members
+  const totalAvenueMembers = avenuedirectors.reduce((total, avenue) => total + avenue.members.length, 0);
+  console.log('Total avenue members:', totalAvenueMembers); // Debug log
+  const [avenueRef, avenueVisible] = useStaggerAnimation(totalAvenueMembers, 100);
   
   // Render Executive Board
   const renderExecutiveBoard = () => (
