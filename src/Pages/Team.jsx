@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import './Team.css'
 import '../utils/scrollAnimations.css'
@@ -33,7 +33,12 @@ function Team() {
   // Calculate total number of avenue directors members
   const totalAvenueMembers = avenuedirectors.reduce((total, avenue) => total + avenue.members.length, 0);
   console.log('Total avenue members:', totalAvenueMembers); // Debug log
-  const [avenueRef, avenueVisible] = useStaggerAnimation(totalAvenueMembers, 100);
+  
+  // Use shorter delay for mobile devices to improve performance
+  const isMobile = window.innerWidth <= 768;
+  const isSmallMobile = window.innerWidth <= 480;
+  const staggerDelay = isSmallMobile ? 25 : isMobile ? 50 : 100; // Progressive delay reduction
+  const [avenueRef, avenueVisible] = useStaggerAnimation(totalAvenueMembers, staggerDelay);
   
   // Render Executive Board
   const renderExecutiveBoard = () => (
@@ -126,6 +131,24 @@ function Team() {
       return acc.concat(membersWithAvenue);
     }, []);
 
+    // Fallback: Show all items after 3 seconds if animations haven't triggered
+    const [showFallback, setShowFallback] = useState(false);
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        if (avenueVisible.size < allMembers.length) {
+          console.log(`Fallback triggered: ${avenueVisible.size}/${allMembers.length} members visible`);
+          console.log('Mobile info:', {
+            isMobile,
+            isSmallMobile,
+            staggerDelay,
+            screenWidth: window.innerWidth
+          });
+          setShowFallback(true);
+        }
+      }, 3000);
+      return () => clearTimeout(timer);
+    }, [allMembers.length, avenueVisible.size]);
+
     return (
       
       
@@ -138,7 +161,7 @@ function Team() {
           
           <div className="team-grid avenue-grid-flat" ref={avenueRef}>
             {allMembers.map((member, memberIndex) => (
-              <div key={memberIndex} className={`member-card avenue-card team-member-animation ${avenueVisible.has(memberIndex) ? 'animate-visible' : 'animate-hidden'}`}>
+              <div key={memberIndex} className={`member-card avenue-card team-member-animation ${avenueVisible.has(memberIndex) || showFallback ? 'animate-visible' : 'animate-hidden'}`}>
                 <div className="member-image">
                   <img 
                     src={member.image} 

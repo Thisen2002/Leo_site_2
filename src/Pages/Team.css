@@ -616,6 +616,11 @@
   .avenue-grid-flat {
     max-width: 800px;
   }
+  
+  /* Reduce animation complexity on tablets */
+  .team-member-animation {
+    transform: translateY(20px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -626,6 +631,7 @@
   .avenue-grid-flat {
     gap: 2rem;
     max-width: 600px;
+    padding: 0 1rem; /* Add horizontal padding */
   }
   
   .avenue-grid-flat .avenue-card {
@@ -646,25 +652,54 @@
   .avenue-card .member-content {
     padding: 1.25rem;
   }
+  
+  /* Simplified animations for mobile */
+  .team-member-animation {
+    transform: translateY(15px);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  }
+  
+  /* Ensure cards are visible by default on mobile if animations fail */
+  .avenue-card.team-member-animation {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 480px) {
   .avenue-grid-flat {
     gap: 1.5rem;
-    max-width: 360px;
+    max-width: 100%;
+    padding: 0 1rem;
   }
   
   .avenue-grid-flat .avenue-card {
     flex: 0 0 100%;
     min-width: auto;
+    max-width: none;
   }
   
   .avenue-card {
     width: 100%;
     min-height: 380px;
+    margin: 0 auto;
   }
   
   .avenue-card .member-image {
     height: 220px;
+  }
+  
+  /* Ensure all cards load properly on small screens */
+  .team-member-animation {
+    transform: none; /* Disable transform on very small screens */
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .avenue-card.team-member-animation {
+    opacity: 1 !important; /* Force visibility on mobile */
+  }
+  
+  /* Disable hover effects on mobile */
+  .avenue-card:hover {
+    transform: none;
   }
 }

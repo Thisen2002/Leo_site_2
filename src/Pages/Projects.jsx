@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Projects.css'
 import '../utils/scrollAnimations.css'
 import { 
@@ -12,10 +12,41 @@ import projects from '../json files/Projects.json'
 function Projects() {
   const [statusFilter, setStatusFilter] = useState('All')
   
+  // Get unique status values and add 'All' option
+  const statusOptions = ['All', ...new Set(projects.map(project => project.status))]
+
+  // Filter projects based on selected status
+  const filteredProjects = statusFilter === 'All' 
+    ? projects 
+    : projects.filter(project => project.status === statusFilter)
+  
   // Animation hooks
   const [heroRef, heroVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);
   const [filterRef, filterVisible] = useScrollAnimation(ANIMATION_CONFIGS.section);
-  const [projectsRef, projectsVisible] = useStaggerAnimation(projects.length, 100);
+  
+  // Progressive delay reduction for mobile performance
+  const isMobile = window.innerWidth <= 768;
+  const isSmallMobile = window.innerWidth <= 480;
+  const staggerDelay = isSmallMobile ? 25 : isMobile ? 50 : 100;
+  const [projectsRef, projectsVisible] = useStaggerAnimation(filteredProjects.length, staggerDelay);
+  
+  // Fallback mechanism for mobile devices
+  const [showFallback, setShowFallback] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (projectsVisible.size < filteredProjects.length) {
+        console.log(`Projects fallback triggered: ${projectsVisible.size}/${filteredProjects.length} projects visible`);
+        console.log('Projects mobile info:', {
+          isMobile,
+          isSmallMobile,
+          staggerDelay,
+          screenWidth: window.innerWidth
+        });
+        setShowFallback(true);
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [filteredProjects.length, projectsVisible.size, isMobile, isSmallMobile, staggerDelay]);
   
   const getStatusBadgeClass = (status) => {
     switch (status) {
@@ -26,16 +57,10 @@ function Projects() {
     }
   }
 
-  // Get unique status values and add 'All' option
-  const statusOptions = ['All', ...new Set(projects.map(project => project.status))]
-
-  // Filter projects based on selected status
-  const filteredProjects = statusFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.status === statusFilter)
-
   const handleStatusFilter = (status) => {
     setStatusFilter(status)
+    // Reset fallback when filter changes
+    setShowFallback(false)
   }
 
   return (
@@ -74,7 +99,7 @@ function Projects() {
           <div className="container" ref={projectsRef}>
             <div className="projects-grid">
               {filteredProjects.map((project, index) => (
-                <div key={project.id} className={`project-card project-card-animation ${projectsVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}>
+                <div key={project.id} className={`project-card project-card-animation ${projectsVisible.has(index) || showFallback ? 'animate-visible' : 'animate-hidden'}`}>
                   <div className="project-image">
                     <img src={project.image} alt={project.title} />
                     <div className={`status-badge ${getStatusBadgeClass(project.status)}`}>

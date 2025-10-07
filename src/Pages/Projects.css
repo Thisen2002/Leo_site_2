@@ -300,11 +300,23 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
     justify-items: center;
+    padding: 0 1rem; /* Add horizontal padding */
   }
   
   .project-card {
     width: 100%;
     max-width: 350px;
+  }
+  
+  /* Simplified animations for mobile */
+  .project-card-animation {
+    transform: translateY(15px);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  }
+  
+  /* Ensure cards are visible by default on mobile if animations fail */
+  .project-card.project-card-animation {
+    opacity: 1;
   }
   
   .projects-filter-section {
@@ -343,5 +355,42 @@
   
   .btn-primary, .btn-secondary {
     width: 200px;
+  }
+}
+
+/* Additional optimizations for very small screens */
+@media (max-width: 480px) {
+  .projects-grid {
+    padding: 0 0.5rem;
+    gap: 1rem;
+  }
+  
+  .project-card {
+    max-width: 100%;
+    min-height: 480px;
+  }
+  
+  /* Disable complex transforms on very small screens */
+  .project-card-animation {
+    transform: none;
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .project-card.project-card-animation {
+    opacity: 1 !important; /* Force visibility on mobile */
+  }
+  
+  /* Disable hover effects on mobile */
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .filter-buttons {
+    gap: 0.25rem;
+  }
+  
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
   }
 }
