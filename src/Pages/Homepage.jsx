@@ -14,10 +14,12 @@ import img1 from '/Pic/hero_section/IMG-1.jpg'
 import img2 from '/Pic/hero_section/IMG-2.jpg'
 import img3 from '/Pic/hero_section/IMG-3.jpg'
 import img4 from '/Pic/hero_section/IMG-4.jpg'
+import img5 from '/Pic/hero_section/IMG-5.jpg'
+import img6 from '/Pic/hero_section/IMG-6.jpg'
 
 function Homepage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const heroImages = [img1, img2, img3, img4];
+  const heroImages = [img1, img2, img3, img4, img5, img6];
 
   // Animation hooks
   const [heroRef, heroVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);

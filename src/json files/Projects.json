@@ -23,7 +23,7 @@
       "category": "Personal Development",
       "description": "A creative writing and expression workshop series that encourages self-reflection, creativity, and positive thinking among participants to foster personal growth.",
       "image": "/Pic/Project/Blooming Thoughts 🌸💜.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "25+ creative minds inspired"
     },
     {
@@ -32,7 +32,7 @@
       "category": "Social Awareness",
       "description": "A comprehensive drug prevention and awareness campaign targeting youth, promoting healthy lifestyle choices and providing support for addiction recovery.",
       "image": "/Pic/Project/Dreams Over Drugs.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "75+ youth educated"
     },
     {
@@ -41,7 +41,7 @@
       "category": "Environment & Business",
       "description": "An eco-entrepreneurship initiative that combines environmental sustainability with business innovation, encouraging green business solutions and sustainable practices.",
       "image": "/Pic/Project/EcoBiz.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "15+ green startups supported"
     },
     {
@@ -52,15 +52,14 @@
       "image": "/Pic/Project/Fiesta de Leos.png",
       "status": "Upcoming",
       "impact": "150+ attendees celebrated"
-    },
-    {
+    },{
       "id": 7,
-      "title": "GEARHEADS 25 Collaboration",
-      "category": "Technology & Innovation",
-      "description": "A collaborative technology and innovation project bringing together multiple clubs to work on engineering solutions, robotics, and technical skill development for students.",
-      "image": "/Pic/Project/GEARHEADS 25 Collaboration Clubs.png",
-      "status": "Upcoming",
-      "impact": "40+ tech enthusiasts engaged"
+      "title": "BOD trip",
+      "category": "Fellowship",
+      "description": "A bonding and recreational trip organized for the Board of Directors to enhance teamwork, leadership skills, and camaraderie among club leaders through shared experiences and activities.",
+      "image": "/Pic/Project/BOD trip.png",
+      "status": "Completed",
+      "impact": "leaders bonded"
     },
     {
       "id": 8,
@@ -77,7 +76,7 @@
       "category": "Health Awareness",
       "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
       "image": "/Pic/Project/Pink Ribbon OC.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "120+ women screened"
     },
     {
@@ -106,5 +105,46 @@
       "image": "/Pic/Project/සෙනෙහසේ චාරිකා.png",
       "status": "Upcoming",
       "impact": "80+ families supported"
+    },
+    {
+      "id": 13,
+      "title": "සෙනෙහසෙන් පොතක්",
+      "category": "Community Service",
+      "description": "A book donation for the people who effect from the flood reasontly occured in Sri Lanka.",
+      "image": "/Pic/Project/සෙනෙහසෙන් පොතක්.png",
+      "status": "Ongoing",
+      "impact": "Help student to recover from flood"
+    },{
+      "id": 14,
+      "title": "Lion's Get",
+      "category": "Fellowship",
+      "description": "A gathering event for Lions and LEOs to foster fellowship, share experiences, and strengthen the bond between members through social activities and networking opportunities.",
+      "image": "/Pic/Project/Lion's Get.png",
+      "status": "Completed",
+      "impact": "30+ members connected"
+    },{
+      "id": 15,
+      "title": "Vision Quest Phase 1",
+      "category": "External Affairs",
+      "description": "As the first phase, we successfully conducted an English Motivation and Empowerment Program at Gampola St. Andrew's College, incorporating practical activities. ",
+      "image": "/Pic/Project/Vision Quest Phase 1.png",
+      "status": "Completed",
+      "impact": "100+ students empowered"
+    },{
+      "id": 16,
+      "title": "Safe and Strong Phase 1",
+      "category": "Health & Safety",
+      "description": "Preschool awareness session",
+      "image": "/Pic/Project/Safe and Strong Phase 1.png",
+      "status": "Completed",
+      "impact": "50+ preschoolers educated"
+    },{
+      "id": 17,
+      "title": "Future Leaders",
+      "category": "Leadership Development",
+      "description": "A leadership development program aimed at nurturing future leaders among youth through skill-building",
+      "image": "/Pic/Project/Future Leaders.png",
+      "status": "Ongoing",
+      "impact": "50+ youth trained"
     }
   ]
