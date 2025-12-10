@@ -61,5 +61,110 @@
     "category": "events",
     "image": "/Pic/Gallery/avurudu_group.jpg",
     "description": "A beautiful group photo of Leo members in colorful traditional Sri Lankan attire during Avurudu festivities."
+  },
+  {
+    "id": 10,
+    "title": "Assistant Secretary",
+    "category": "team",
+    "image": "/Pic/Gallery/Assistant secatory.jpg",
+    "description": "Our dedicated Assistant Secretary leading with passion and commitment."
+  },
+  {
+    "id": 11,
+    "title": "Board of Directors Trip",
+    "category": "team",
+    "image": "/Pic/Gallery/Bod trip.jpg",
+    "description": "Bonding and teamwork during the Board of Directors trip."
+  },
+  {
+    "id": 12,
+    "title": "Board of Directors Trip - Part 2",
+    "category": "team",
+    "image": "/Pic/Gallery/Bod trip 2.jpg",
+    "description": "More memorable moments from the Board of Directors team excursion."
+  },
+  {
+    "id": 13,
+    "title": "Executive Committee",
+    "category": "team",
+    "image": "/Pic/Gallery/Exco.jpg",
+    "description": "Our dedicated Executive Committee members leading the organization."
+  },
+  {
+    "id": 14,
+    "title": "General Meeting",
+    "category": "events",
+    "image": "/Pic/Gallery/General meeting.jpg",
+    "description": "Members gathered for an important general meeting and discussion."
+  },
+  {
+    "id": 15,
+    "title": "Installation Ceremony",
+    "category": "events",
+    "image": "/Pic/Gallery/Installation .jpg",
+    "description": "Celebrating the official installation of our new leadership team."
+  },
+  {
+    "id": 16,
+    "title": "Lions Get Together",
+    "category": "events",
+    "image": "/Pic/Gallery/lions get.jpg",
+    "description": "Leo members enjoying a social gathering and networking session."
+  },
+  {
+    "id": 17,
+    "title": "Lions Get Together - Part 2",
+    "category": "events",
+    "image": "/Pic/Gallery/lions get 2.jpg",
+    "description": "Continuing the fun and camaraderie at our Lions get-together event."
+  },
+  {
+    "id": 18,
+    "title": "Lions Get Together - Part 3",
+    "category": "events",
+    "image": "/Pic/Gallery/lions get 3.jpg",
+    "description": "More highlights from the Lions get-together celebration."
+  },
+  {
+    "id": 19,
+    "title": "Office Bearers",
+    "category": "team",
+    "image": "/Pic/Gallery/Office bearous .jpg",
+    "description": "Meet our dedicated office bearers serving the organization."
+  },
+  {
+    "id": 20,
+    "title": "Officers Gathering",
+    "category": "team",
+    "image": "/Pic/Gallery/officers.jpg",
+    "description": "Our team of officers working together for the organization's success."
+  },
+  {
+    "id": 21,
+    "title": "President Installation",
+    "category": "events",
+    "image": "/Pic/Gallery/President instalation.jpg",
+    "description": "A momentous ceremony celebrating the installation of our new President."
+  },
+  {
+    "id": 22,
+    "title": "Safe and Strong Campaign",
+    "category": "projects",
+    "image": "/Pic/Gallery/safe and strong.jpg",
+    "description": "Our Safe and Strong initiative making a difference in community safety."
+  },
+  {
+    "id": 23,
+    "title": "Vidutharana Seminar",
+    "category": "events",
+    "image": "/Pic/Gallery/Vidutharana semina.jpg",
+    "description": "Participants engaged in learning at our Vidutharana educational seminar."
+  },
+  {
+    "id": 24,
+    "title": "Vidutharana Program",
+    "category": "projects",
+    "image": "/Pic/Gallery/Vidutharana.jpg",
+    "description": "Our Vidutharana program delivering education and empowerment to communities."
   }
 ]
