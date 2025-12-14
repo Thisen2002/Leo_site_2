@@ -7,27 +7,19 @@ import {
   getAnimationClass,
   ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
-import galleryItems from '../json files/gallery.json'
+// Load all images from the public Gallery folder without using JSON
+// Vite supports import.meta.glob to include assets at build time
+const imageModules = import.meta.glob('/public/Pic/Gallery/*.{jpg,jpeg,png}', { eager: true, as: 'url' })
+const images = Object.values(imageModules)
 
 function Gallery() {
-  const [activeCategory, setActiveCategory] = useState('all')
   const [selectedImage, setSelectedImage] = useState(null)
 
   // Animation hooks
   const [heroRef, heroVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);
-  const [filterRef, filterVisible] = useScrollAnimation(ANIMATION_CONFIGS.section);
-  const [galleryRef, galleryVisible] = useStaggerAnimation(galleryItems.length, 50);
+  const [galleryRef, galleryVisible] = useStaggerAnimation(images.length, 50);
 
-  const categories = [
-    { id: 'all', name: 'All Photos', count: galleryItems.length },
-    { id: 'events', name: 'Events', count: galleryItems.filter(item => item.category === 'events').length },
-    { id: 'projects', name: 'Projects', count: galleryItems.filter(item => item.category === 'projects').length },
-    { id: 'team', name: 'Team', count: galleryItems.filter(item => item.category === 'team').length }
-  ]
-
-  const filteredItems = activeCategory === 'all' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory)
+  const filteredItems = images
 
   const openLightbox = (item) => {
     setSelectedImage(item)
@@ -37,14 +29,25 @@ function Gallery() {
     setSelectedImage(null)
   }
 
+  // Close on ESC key
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') closeLightbox()
+    }
+    if (selectedImage) {
+      window.addEventListener('keydown', onKeyDown)
+    }
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [selectedImage])
+
   const nextImage = () => {
-    const currentIndex = filteredItems.findIndex(item => item.id === selectedImage.id)
+    const currentIndex = filteredItems.findIndex(item => item === selectedImage)
     const nextIndex = (currentIndex + 1) % filteredItems.length
     setSelectedImage(filteredItems[nextIndex])
   }
 
   const prevImage = () => {
-    const currentIndex = filteredItems.findIndex(item => item.id === selectedImage.id)
+    const currentIndex = filteredItems.findIndex(item => item === selectedImage)
     const prevIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length
     setSelectedImage(filteredItems[prevIndex])
   }
@@ -65,39 +68,19 @@ function Gallery() {
       <main>
         <section className="gallery-content">
           <div className="container">
-            {/* Category Filter */}
-            <div className={`category-filter ${getAnimationClass('slideInUp', filterVisible)}`} ref={filterRef}>
-              {categories.map((category, index) => (
-                <button
-                  key={category.id}
-                  className={`filter-btn ${activeCategory === category.id ? 'active' : ''} button-animation ${filterVisible ? 'animate-visible' : 'animate-hidden'}`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                  onClick={() => setActiveCategory(category.id)}
-                >
-                  {category.name} ({category.count})
-                </button>
-              ))}
-            </div>
-
-            {/* Gallery Grid */}
+            {/* Simple Gallery Grid (thumbnails only) */}
             <div className="gallery-grid" ref={galleryRef}>
               {filteredItems.map((item, index) => (
-                <div 
-                  key={item.id} 
+                <button 
+                  key={item}
                   className={`gallery-item gallery-item-animation ${galleryVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}
                   onClick={() => openLightbox(item)}
+                  aria-label="View image"
                 >
                   <div className="gallery-image">
-                    <img src={item.image} alt={item.title} />
-                    <div className="gallery-overlay">
-                      <div className="overlay-content">
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                        <button className="view-btn">View Full Size</button>
-                      </div>
-                    </div>
+                    <img src={item} alt="" loading="lazy" />
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -127,12 +110,7 @@ function Gallery() {
             <button className="nav-btn next-btn" onClick={nextImage}>›</button>
             
             <div className="lightbox-image">
-              <img src={selectedImage.image} alt={selectedImage.title} />
-            </div>
-            
-            <div className="lightbox-info">
-              <h3>{selectedImage.title}</h3>
-              <p>{selectedImage.description}</p>
+              <img src={selectedImage} alt="" />
             </div>
           </div>
         </div>
