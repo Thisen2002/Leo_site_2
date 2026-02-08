@@ -153,7 +153,7 @@
       "category": "Environment & Education",
       "description": "An educational workshop teaching students how to build bee houses at home and providing hands-on experience with beekeeping. The project promotes environmental awareness, pollinator conservation, and sustainable practices while inspiring youth to protect vital ecosystems.",
       "image": "/Pic/Project/Wings of Life.jpeg",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "50+ students trained in beekeeping"
     },
     {
@@ -173,5 +173,68 @@
       "image": "/Pic/Project/Sankalana 2.0.jpeg",
       "status": "Completed",
       "impact": "60+ seniors supported"
+    },
+    {
+      "id": 21,
+      "title": "ආරෝග්‍යා 🩺",
+      "category": "Community Service",
+      "description": "A health-focused community service initiative providing medical assistance, health education, and wellness support to underserved populations, promoting overall well-being and access to healthcare resources.",
+      "image": "/Pic/Project/ආරෝග්‍යා 🩺.png",
+      "status": "Completed",
+      "impact": "30+ individuals benefited"
+    },
+    {
+      "id": 22,
+      "title": "Luminara 2.0 💖🌸",
+      "category": "Fellowship & Entertainment",
+      "description": "musical concert organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
+      "image": "/Pic/Project/Luminara 2.0 💖🌸.png",
+      "status": "Upcoming",
+      "impact": "50+ attendees celebrated"
+    },
+    {
+      "id": 23,
+      "title": "තීර්ථ 🖋️",
+      "category": "Literary & Cultural",
+      "description": "A literary and cultural initiative that celebrates the rich heritage of Sri Lankan literature and culture through workshops, readings, and creative expression, fostering a deeper appreciation for the arts.",
+      "image": "/Pic/Project/තීර්ථ 🖋️.png",
+      "status": "Ongoing",
+      "impact": "40+ participants engaged"
+    },
+    {
+      "id": 24,
+      "title": "Photoshop Workshop",
+      "category": "Skill Development",
+      "description": "A hands-on workshop designed to teach participants the fundamentals of Adobe Photoshop, enhancing their graphic design skills and creativity for personal and professional projects.",
+      "image": "/Pic/Project/Photoshop Workshop.png",
+      "status": "Ongoing",
+      "impact": "40+ attendees expected"
+    },
+    {
+      "id": 25,
+      "title": "Zero to Hero",
+      "category": "Fellowship & Entertainment",
+      "description": "A talent show organized by LEO club members, providing a platform for members to showcase their unique talents and fostering camaraderie through entertainment and friendly competition.",
+      "image": "/Pic/Project/Zero to Hero.png",
+      "status": "Upcoming",
+      "impact": "30+ participants expected"
+    },
+    {
+      "id": 26,
+      "title": "Leo මනුදම් මෙහෙවර",
+      "category": "Community Service",
+      "description": "A community service initiative focused on providing aid and support to those in need, embodying the spirit of compassion and humanitarianism through various outreach programs and activities.",
+      "image": "/Pic/Project/Leo මනුදම් මෙහෙවර.png",
+      "status": "Completed",
+      "impact": "40+ attendees expected"
+    },
+    {
+      "id": 27,
+      "title": "Canva Workshop 👩‍💻",
+      "category": "Skill Development",
+      "description": "A practical workshop aimed at teaching participants how to effectively use Canva for graphic design, enhancing their ability to create visually appealing content for personal and professional use.",
+      "image": "/Pic/Project/Canva Workshop 👩‍💻.png",
+      "status": "Completed",
+      "impact": "50+ attendees expected"
     }
   ]
