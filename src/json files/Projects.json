@@ -146,5 +146,32 @@
       "image": "/Pic/Project/Future Leaders.png",
       "status": "Ongoing",
       "impact": "50+ youth trained"
+    },
+    {
+      "id": 18,
+      "title": "Wings of Life",
+      "category": "Environment & Education",
+      "description": "An educational workshop teaching students how to build bee houses at home and providing hands-on experience with beekeeping. The project promotes environmental awareness, pollinator conservation, and sustainable practices while inspiring youth to protect vital ecosystems.",
+      "image": "/Pic/Project/Wings of Life.jpeg",
+      "status": "Upcoming",
+      "impact": "50+ students trained in beekeeping"
+    },
+    {
+      "id": 19,
+      "title": "Secret Santa",
+      "category": "Fellowship & Charity",
+      "description": "A heartwarming Christmas celebration bringing LEO members together for a gift exchange and festive fellowship. The event spreads holiday cheer while also extending kindness to underprivileged children through charitable giving.",
+      "image": "/Pic/Project/Secret Santa.jpg",
+      "status": "Completed",
+      "impact": "40+ members participated, 50+ gifts exchanged"
+    },
+    {
+      "id": 20,
+      "title": "Sankalana 2.0",
+      "category": "Elder Care",
+      "description": "A dedicated avenue focusing on the welfare and support of senior citizens. The program provides companionship, healthcare awareness, recreational activities, and essential assistance to elderly community members, honoring their contributions to society.",
+      "image": "/Pic/Project/Sankalana 2.0.jpeg",
+      "status": "Completed",
+      "impact": "60+ seniors supported"
     }
   ]
