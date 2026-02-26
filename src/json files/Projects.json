@@ -236,5 +236,23 @@
       "image": "/Pic/Project/Canva Workshop 👩‍💻.png",
       "status": "Completed",
       "impact": "50+ attendees expected"
+    },
+    {
+      "id": 28,
+      "title": "Happy paws🐾💛",
+      "category": "Environment & Animal Welfare",
+      "description": "A fun and engaging event organized by LEO club members to celebrate the joy of pets and their companionship, bringing together pet lovers and fostering a sense of community.",
+      "image": "/Pic/Project/Happy paws🐾💛.png",
+      "status": "Upcoming",
+      "impact": "30+ participants expected"
+    },
+    {
+      "id": 29,
+      "title": "Haunted DJ Night",
+      "category": "Fellowship & Entertainment",
+      "description": "A spooky DJ night event organized by LEO club members, featuring eerie music and a haunted atmosphere to create a unique and memorable experience.",
+      "image": "/Pic/Project/Haunted DJ Night.png",
+      "status": "Upcoming",
+      "impact": "30+ participants expected"
     }
   ]
