@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './Gallery.css'
 import '../utils/scrollAnimations.css'
+import galleryData from '../data/gallery.json'
 import { 
   useScrollAnimation, 
   useStaggerAnimation,
   getAnimationClass,
   ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
-// Load all images from the public Gallery folder without using JSON
-// Vite supports import.meta.glob to include assets at build time
-const imageModules = import.meta.glob('/public/Pic/Gallery/*.{jpg,jpeg,png}', { eager: true, as: 'url' })
-const images = Object.values(imageModules)
+
+const images = galleryData
 
 function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)

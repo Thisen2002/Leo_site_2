@@ -53,6 +53,23 @@ export const useStaggerAnimation = (itemCount, staggerDelay = 100) => {
     const container = containerRef.current;
     if (!container) return;
 
+    // Check if element is already in viewport
+    const checkInitialVisibility = () => {
+      const rect = container.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    };
+
+    // Trigger animation if already visible
+    if (checkInitialVisibility()) {
+      for (let i = 0; i < itemCount; i++) {
+        setTimeout(() => {
+          setVisibleItems(prev => new Set([...prev, i]));
+        }, i * staggerDelay);
+      }
+      return;
+    }
+
+    // Otherwise use IntersectionObserver
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
