@@ -94,7 +94,7 @@
       "category": "Technology & Innovation",
       "description": "The fourth iteration of the flagship technology project, advancing digital innovation, IoT solutions, and smart technology implementation for community development and education.",
       "image": "/Pic/Project/විදුතරණ 4.0.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "60+ participants engaged"
     },
     {
@@ -144,7 +144,7 @@
       "category": "Leadership Development",
       "description": "A leadership development program aimed at nurturing future leaders among youth through skill-building",
       "image": "/Pic/Project/Future Leaders.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "50+ youth trained"
     },
     {
@@ -244,7 +244,7 @@
       "description": "A fun and engaging event organized by LEO club members to celebrate the joy of pets and their companionship, bringing together pet lovers and fostering a sense of community.",
       "image": "/Pic/Project/Happy paws🐾💛.png",
       "status": "Upcoming",
-      "impact": "30+ participants expected"
+      "impact": "40+ participants expected"
     },
     {
       "id": 29,
@@ -254,5 +254,23 @@
       "image": "/Pic/Project/Haunted DJ Night.png",
       "status": "Upcoming",
       "impact": "30+ participants expected"
+    },
+    {
+      "id": 30,
+      "title": "Safe and strong phase 2",
+      "category": "Adventure & Wellness",
+      "description": "The second phase of the Safe and Strong initiative.",
+      "image": "/Pic/Project/Safe and strong phase 2.png",
+      "status": "Upcoming",
+      "impact": "60+ participants engaged"
+    },
+    {
+      "id": 31,
+      "title": "Official visit - GM",
+      "category": "External Affairs",
+      "description": "An official visit by the Lions Clubs in sri lanka to our club.",
+      "image": "/Pic/Project/Official visit - GM.png",
+      "status": "Completed",
+      "impact": "30+ members connected"
     }
   ]
