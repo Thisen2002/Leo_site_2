@@ -272,5 +272,86 @@
       "image": "/Pic/Project/Official visit - GM.png",
       "status": "Completed",
       "impact": "30+ members connected"
+    },
+    {
+      "id": 32,
+      "title": "Pink Ribbon 2.0 (Phase 2)",
+      "category": "Health Awareness",
+      "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
+      "image": "/Pic/Project/Pink Ribbon 2.0 (Phase 2).png",
+      "status": "Ongoing",
+      "impact": "120+ women screened"
+    },
+    {
+      "id": 33,
+      "title": "Linkedin leo edition",
+      "category": "Adventure & Wellness",
+      "description": "Join interactive of university of peradeniya leo club and university of ruhuna leo club",
+      "image": "/Pic/Project/Linkedin.png",
+      "status": "Completed",
+      "impact": "50+ participants engaged"
+    },
+    {
+      "id": 34,
+      "title": "Leo Rota Avurudu",
+      "category": "Fellowship & Entertainment",
+      "description": "A festive celebration organized by LEO club members to welcome the Sinhala and Tamil New Year, featuring traditional games, cultural performances, and a joyful atmosphere for members to connect and celebrate together.",
+      "image": "/Pic/Project/Leo Rota Avurudu.png",
+      "status": "Ongoing",
+      "impact": "50+ participants expected"
+    },
+    {
+      "id": 35,
+      "title": "සුරක්ෂාවට හඬක්",
+      "category": "Social Awareness",
+      "description": "A social awareness campaign focused on advocating for safety and security in the community, raising awareness about important safety issues, and promoting proactive measures to create a safer environment for all.",
+      "image": "/Pic/Project/සුරක්ෂාවට හඬක්.png",
+      "status": "Ongoing",
+      "impact": "50+ community members reached"
+    },
+    {
+      "id": 36,
+      "title": "Vivid",
+      "category": "Health & Safety",
+      "description": "Giving spectors to the visually impaired people",
+      "image": "/Pic/Project/Vivid.png",
+      "status": "Upcoming",
+      "impact": "50+ participants expected"
+    },
+    {
+      "id": 37,
+      "title": "Little Heroes",
+      "category": "Fellowship & Charity",
+      "description": "A joyful evening with childeren who get cancer treatment at the hospital. We organized fun activities, games, and entertainment to bring smiles and happiness to these little heroes during their challenging journey.",
+      "image": "/Pic/Project/Little Heroes.png",
+      "status": "Completed",
+      "impact": "30+ participants expected"
+    },
+    {
+      "id": 38,
+      "title": "සෙනෙහසේ වසන්තය",
+      "category": "Fellowship & Entertainment",
+      "description": "A vibrant and colorful spring festival organized by LEO club members.",
+      "image": "/Pic/Project/සෙනෙහසේ වසන්තය.png",
+      "status": "Ongoing",
+      "impact": "30+ participants expected"
+    },
+    {
+      "id": 39,
+      "title": "LEO for CAREER",
+      "category": "Fellowship & Entertainment",
+      "description": "A career development event organized by LEO club members, providing a platform for members to explore opportunities and enhance their professional skills.",
+      "image": "/Pic/Project/LEO for CAREER.png",
+      "status": "Upcoming",
+      "impact": "40+ participants expected"
+    },
+    {
+      "id": 40,
+      "title": "Vivid (phase 2)",
+      "category": "Fellowship & Entertainment",
+      "description": "The second phase of the Vivid project, continuing our efforts to provide spectors to visually impaired individuals and enhance their quality of life through improved vision and accessibility.",
+      "image": "/Pic/Project/Vivid (phase 2).png",
+      "status": "Ongoing",
+      "impact": "40+ participants expected"
     }
   ]
