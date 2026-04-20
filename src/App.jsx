@@ -9,6 +9,7 @@ import Projects from "./Pages/Projects";
 import Team from "./Pages/Team";
 import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
+import Research from "./Pages/Research";
 
 // Component to handle scrolling to top on route change
 function ScrollToTop() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/team/:teamType" element={<Team />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/research" element={<Research />} />
             <Route path="*" element={<Notfound />} />
 
           </Routes>
