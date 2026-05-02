@@ -5,7 +5,7 @@
       "category": "Education",
       "description": "An innovative educational program designed to enhance university students' leadership skills and academic excellence through collaborative learning and mentorship opportunities.",
       "image": "/Pic/Project/ALPHA U 3.0.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "50+ students empowered"
     },
     {
@@ -112,7 +112,7 @@
       "category": "Community Service",
       "description": "A book donation for the people who effect from the flood reasontly occured in Sri Lanka.",
       "image": "/Pic/Project/සෙනෙහසෙන් පොතක්.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "Help student to recover from flood"
     },{
       "id": 14,
@@ -189,7 +189,7 @@
       "category": "Fellowship & Entertainment",
       "description": "musical concert organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
       "image": "/Pic/Project/Luminara 2.0 💖🌸.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "50+ attendees celebrated"
     },
     {
@@ -198,7 +198,7 @@
       "category": "Literary & Cultural",
       "description": "A literary and cultural initiative that celebrates the rich heritage of Sri Lankan literature and culture through workshops, readings, and creative expression, fostering a deeper appreciation for the arts.",
       "image": "/Pic/Project/තීර්ථ 🖋️.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "40+ participants engaged"
     },
     {
@@ -207,7 +207,7 @@
       "category": "Skill Development",
       "description": "A hands-on workshop designed to teach participants the fundamentals of Adobe Photoshop, enhancing their graphic design skills and creativity for personal and professional projects.",
       "image": "/Pic/Project/Photoshop Workshop.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "40+ attendees expected"
     },
     {
@@ -216,7 +216,7 @@
       "category": "Fellowship & Entertainment",
       "description": "A talent show organized by LEO club members, providing a platform for members to showcase their unique talents and fostering camaraderie through entertainment and friendly competition.",
       "image": "/Pic/Project/Zero to Hero.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "30+ participants expected"
     },
     {
@@ -243,7 +243,7 @@
       "category": "Environment & Animal Welfare",
       "description": "A fun and engaging event organized by LEO club members to celebrate the joy of pets and their companionship, bringing together pet lovers and fostering a sense of community.",
       "image": "/Pic/Project/Happy paws🐾💛.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "40+ participants expected"
     },
     {
@@ -261,7 +261,7 @@
       "category": "Adventure & Wellness",
       "description": "The second phase of the Safe and Strong initiative.",
       "image": "/Pic/Project/Safe and strong phase 2.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "60+ participants engaged"
     },
     {
@@ -279,7 +279,7 @@
       "category": "Health Awareness",
       "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
       "image": "/Pic/Project/Pink Ribbon 2.0 (Phase 2).png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "120+ women screened"
     },
     {
@@ -297,7 +297,7 @@
       "category": "Fellowship & Entertainment",
       "description": "A festive celebration organized by LEO club members to welcome the Sinhala and Tamil New Year, featuring traditional games, cultural performances, and a joyful atmosphere for members to connect and celebrate together.",
       "image": "/Pic/Project/Leo Rota Avurudu.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "50+ participants expected"
     },
     {
@@ -306,7 +306,7 @@
       "category": "Social Awareness",
       "description": "A social awareness campaign focused on advocating for safety and security in the community, raising awareness about important safety issues, and promoting proactive measures to create a safer environment for all.",
       "image": "/Pic/Project/සුරක්ෂාවට හඬක්.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "50+ community members reached"
     },
     {
@@ -315,7 +315,7 @@
       "category": "Health & Safety",
       "description": "Giving spectors to the visually impaired people",
       "image": "/Pic/Project/Vivid.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "50+ participants expected"
     },
     {
@@ -333,7 +333,7 @@
       "category": "Fellowship & Entertainment",
       "description": "A vibrant and colorful spring festival organized by LEO club members.",
       "image": "/Pic/Project/සෙනෙහසේ වසන්තය.png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "30+ participants expected"
     },
     {
@@ -342,7 +342,7 @@
       "category": "Fellowship & Entertainment",
       "description": "A career development event organized by LEO club members, providing a platform for members to explore opportunities and enhance their professional skills.",
       "image": "/Pic/Project/LEO for CAREER.png",
-      "status": "Upcoming",
+      "status": "Completed",
       "impact": "40+ participants expected"
     },
     {
@@ -351,7 +351,7 @@
       "category": "Fellowship & Entertainment",
       "description": "The second phase of the Vivid project, continuing our efforts to provide spectors to visually impaired individuals and enhance their quality of life through improved vision and accessibility.",
       "image": "/Pic/Project/Vivid (phase 2).png",
-      "status": "Ongoing",
+      "status": "Completed",
       "impact": "40+ participants expected"
     }
   ]
