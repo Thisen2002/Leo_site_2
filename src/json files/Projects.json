@@ -353,5 +353,32 @@
       "image": "/Pic/Project/Vivid (phase 2).png",
       "status": "Completed",
       "impact": "40+ participants expected"
+    },
+    {
+      "id": 41,
+      "title": "BOD Board Transition",
+      "category": "Fellowship",
+      "description": "2026/2027 Term project. The official transition of the Board of Directors, welcoming the new leaders for the term.",
+      "image": "/Pic/Project/BOD Board Transition 2026.jpeg",
+      "status": "26/27 Term",
+      "impact": "New board officially took over"
+    },
+    {
+      "id": 42,
+      "title": "Eco Tide",
+      "category": "Environment",
+      "description": "2026/2027 Term project. An environmental initiative focused on cleaning and preserving our natural ecosystems.",
+      "image": "/Pic/Project/Eco Tide 2026.jpeg",
+      "status": "26/27 Term",
+      "impact": "Environmental awareness raised"
+    },
+    {
+      "id": 43,
+      "title": "Samagi Sathkara",
+      "category": "Community Service",
+      "description": "2026/2027 Term project. A community service project aimed at helping those in need and fostering unity.",
+      "image": "/Pic/Project/Samagi Sathkara 2026.jpeg",
+      "status": "26/27 Term",
+      "impact": "Community supported"
     }
   ]

@@ -166,6 +166,11 @@
   color: #004085;
 }
 
+.status-new-term {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
 .project-content {
   padding: 2rem;
   flex: 1;

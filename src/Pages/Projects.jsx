@@ -53,6 +53,7 @@ function Projects() {
       case 'Completed': return 'status-completed'
       case 'Ongoing': return 'status-ongoing'
       case 'Upcoming': return 'status-upcoming'
+      case '26/27 Term': return 'status-new-term'
       default: return 'status-default'
     }
   }
