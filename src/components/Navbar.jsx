@@ -57,6 +57,7 @@ function Navbar() {
           <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={closeMenu}>About</Link>
           <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`} onClick={closeMenu}>Projects</Link>
           <Link to="/research" className={`nav-link ${isActive('/research') ? 'active' : ''}`} onClick={closeMenu}>Research</Link>
+          <Link to="/blog" className={`nav-link ${isActive('/blog') ? 'active' : ''}`} onClick={closeMenu}>Blog</Link>
           
           {/* Team Dropdown */}
           <div className="nav-dropdown" onMouseLeave={closeTeamDropdown}>

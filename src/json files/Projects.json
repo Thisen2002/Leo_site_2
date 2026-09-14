@@ -1,384 +1,407 @@
 [
-    {
-      "id": 1,
-      "title": "ALPHA U 3.0",
-      "category": "Education",
-      "description": "An innovative educational program designed to enhance university students' leadership skills and academic excellence through collaborative learning and mentorship opportunities.",
-      "image": "/Pic/Project/ALPHA U 3.0.png",
-      "status": "Completed",
-      "impact": "50+ students empowered"
-    },
-    {
-      "id": 2,
-      "title": "Bloom & Blues",
-      "category": "Mental Health",
-      "description": "A mental health awareness and support initiative focusing on emotional well-being, stress management, and creating a supportive community for students and youth.",
-      "image": "/Pic/Project/Bloom & Blues.png",
-      "status": "Upcoming",
-      "impact": "30+ participants reached"
-    },
-    {
-      "id": 3,
-      "title": "Blooming Thoughts 🌸💜",
-      "category": "Personal Development",
-      "description": "A creative writing and expression workshop series that encourages self-reflection, creativity, and positive thinking among participants to foster personal growth.",
-      "image": "/Pic/Project/Blooming Thoughts 🌸💜.png",
-      "status": "Completed",
-      "impact": "25+ creative minds inspired"
-    },
-    {
-      "id": 4,
-      "title": "Dreams Over Drugs",
-      "category": "Social Awareness",
-      "description": "A comprehensive drug prevention and awareness campaign targeting youth, promoting healthy lifestyle choices and providing support for addiction recovery.",
-      "image": "/Pic/Project/Dreams Over Drugs.png",
-      "status": "Completed",
-      "impact": "75+ youth educated"
-    },
-    {
-      "id": 5,
-      "title": "EcoBiz",
-      "category": "Environment & Business",
-      "description": "An eco-entrepreneurship initiative that combines environmental sustainability with business innovation, encouraging green business solutions and sustainable practices.",
-      "image": "/Pic/Project/EcoBiz.png",
-      "status": "Completed",
-      "impact": "15+ green startups supported"
-    },
-    {
-      "id": 6,
-      "title": "Fiesta de Leos",
-      "category": "Cultural & Social",
-      "description": "An annual celebration and cultural festival organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
-      "image": "/Pic/Project/Fiesta de Leos.png",
-      "status": "Upcoming",
-      "impact": "150+ attendees celebrated"
-    },{
-      "id": 7,
-      "title": "BOD trip",
-      "category": "Fellowship",
-      "description": "A bonding and recreational trip organized for the Board of Directors to enhance teamwork, leadership skills, and camaraderie among club leaders through shared experiences and activities.",
-      "image": "/Pic/Project/BOD trip.png",
-      "status": "Completed",
-      "impact": "leaders bonded"
-    },
-    {
-      "id": 8,
-      "title": "LEO Mini Hike",
-      "category": "Adventure & Wellness",
-      "description": "An outdoor adventure and fitness initiative promoting physical wellness, team building, and environmental appreciation through organized hiking activities and nature exploration.",
-      "image": "/Pic/Project/LEO Mini Hike .png",
-      "status": "Upcoming",
-      "impact": "35+ hikers participated"
-    },
-    {
-      "id": 9,
-      "title": "Pink Ribbon OC",
-      "category": "Health Awareness",
-      "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
-      "image": "/Pic/Project/Pink Ribbon OC.png",
-      "status": "Completed",
-      "impact": "120+ women screened"
-    },
-    {
-      "id": 10,
-      "title": "විදුතරණ 3.0",
-      "category": "Technology & Innovation",
-      "description": "An advanced technological innovation project focusing on electrical and electronic solutions, promoting STEM education and practical application of engineering concepts among students.",
-      "image": "/Pic/Project/විදුතරණ 3.0.png",
-      "status": "Completed",
-      "impact": "45+ students trained"
-    },
-    {
-      "id": 11,
-      "title": "විදුතරණ 4.0",
-      "category": "Technology & Innovation",
-      "description": "The fourth iteration of the flagship technology project, advancing digital innovation, IoT solutions, and smart technology implementation for community development and education.",
-      "image": "/Pic/Project/විදුතරණ 4.0.png",
-      "status": "Completed",
-      "impact": "60+ participants engaged"
-    },
-    {
-      "id": 12,
-      "title": "සෙනෙහසේ චාරිකා",
-      "category": "Community Service",
-      "description": "A compassionate community outreach program providing support, care, and essential services to underprivileged families and elderly community members with love and dedication.",
-      "image": "/Pic/Project/සෙනෙහසේ චාරිකා.png",
-      "status": "Upcoming",
-      "impact": "80+ families supported"
-    },
-    {
-      "id": 13,
-      "title": "සෙනෙහසෙන් පොතක්",
-      "category": "Community Service",
-      "description": "A book donation for the people who effect from the flood reasontly occured in Sri Lanka.",
-      "image": "/Pic/Project/සෙනෙහසෙන් පොතක්.png",
-      "status": "Completed",
-      "impact": "Help student to recover from flood"
-    },{
-      "id": 14,
-      "title": "Lion's Get",
-      "category": "Fellowship",
-      "description": "A gathering event for Lions and LEOs to foster fellowship, share experiences, and strengthen the bond between members through social activities and networking opportunities.",
-      "image": "/Pic/Project/Lion's Get.png",
-      "status": "Completed",
-      "impact": "30+ members connected"
-    },{
-      "id": 15,
-      "title": "Vision Quest Phase 1",
-      "category": "External Affairs",
-      "description": "As the first phase, we successfully conducted an English Motivation and Empowerment Program at Gampola St. Andrew's College, incorporating practical activities. ",
-      "image": "/Pic/Project/Vision Quest Phase 1.png",
-      "status": "Completed",
-      "impact": "100+ students empowered"
-    },{
-      "id": 16,
-      "title": "Safe and Strong Phase 1",
-      "category": "Health & Safety",
-      "description": "Preschool awareness session",
-      "image": "/Pic/Project/Safe and Strong Phase 1.png",
-      "status": "Completed",
-      "impact": "50+ preschoolers educated"
-    },{
-      "id": 17,
-      "title": "Future Leaders",
-      "category": "Leadership Development",
-      "description": "A leadership development program aimed at nurturing future leaders among youth through skill-building",
-      "image": "/Pic/Project/Future Leaders.png",
-      "status": "Completed",
-      "impact": "50+ youth trained"
-    },
-    {
-      "id": 18,
-      "title": "Wings of Life",
-      "category": "Environment & Education",
-      "description": "An educational workshop teaching students how to build bee houses at home and providing hands-on experience with beekeeping. The project promotes environmental awareness, pollinator conservation, and sustainable practices while inspiring youth to protect vital ecosystems.",
-      "image": "/Pic/Project/Wings of Life.jpeg",
-      "status": "Completed",
-      "impact": "50+ students trained in beekeeping"
-    },
-    {
-      "id": 19,
-      "title": "Secret Santa",
-      "category": "Fellowship & Charity",
-      "description": "A heartwarming Christmas celebration bringing LEO members together for a gift exchange and festive fellowship. The event spreads holiday cheer while also extending kindness to underprivileged children through charitable giving.",
-      "image": "/Pic/Project/Secret Santa.jpg",
-      "status": "Completed",
-      "impact": "40+ members participated, 50+ gifts exchanged"
-    },
-    {
-      "id": 20,
-      "title": "Sankalana 2.0",
-      "category": "Elder Care",
-      "description": "A dedicated avenue focusing on the welfare and support of senior citizens. The program provides companionship, healthcare awareness, recreational activities, and essential assistance to elderly community members, honoring their contributions to society.",
-      "image": "/Pic/Project/Sankalana 2.0.jpeg",
-      "status": "Completed",
-      "impact": "60+ seniors supported"
-    },
-    {
-      "id": 21,
-      "title": "ආරෝග්‍යා 🩺",
-      "category": "Community Service",
-      "description": "A health-focused community service initiative providing medical assistance, health education, and wellness support to underserved populations, promoting overall well-being and access to healthcare resources.",
-      "image": "/Pic/Project/ආරෝග්‍යා 🩺.png",
-      "status": "Completed",
-      "impact": "30+ individuals benefited"
-    },
-    {
-      "id": 22,
-      "title": "Luminara 2.0 💖🌸",
-      "category": "Fellowship & Entertainment",
-      "description": "musical concert organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
-      "image": "/Pic/Project/Luminara 2.0 💖🌸.png",
-      "status": "Completed",
-      "impact": "50+ attendees celebrated"
-    },
-    {
-      "id": 23,
-      "title": "තීර්ථ 🖋️",
-      "category": "Literary & Cultural",
-      "description": "A literary and cultural initiative that celebrates the rich heritage of Sri Lankan literature and culture through workshops, readings, and creative expression, fostering a deeper appreciation for the arts.",
-      "image": "/Pic/Project/තීර්ථ 🖋️.png",
-      "status": "Completed",
-      "impact": "40+ participants engaged"
-    },
-    {
-      "id": 24,
-      "title": "Photoshop Workshop",
-      "category": "Skill Development",
-      "description": "A hands-on workshop designed to teach participants the fundamentals of Adobe Photoshop, enhancing their graphic design skills and creativity for personal and professional projects.",
-      "image": "/Pic/Project/Photoshop Workshop.png",
-      "status": "Completed",
-      "impact": "40+ attendees expected"
-    },
-    {
-      "id": 25,
-      "title": "Zero to Hero",
-      "category": "Fellowship & Entertainment",
-      "description": "A talent show organized by LEO club members, providing a platform for members to showcase their unique talents and fostering camaraderie through entertainment and friendly competition.",
-      "image": "/Pic/Project/Zero to Hero.png",
-      "status": "Completed",
-      "impact": "30+ participants expected"
-    },
-    {
-      "id": 26,
-      "title": "Leo මනුදම් මෙහෙවර",
-      "category": "Community Service",
-      "description": "A community service initiative focused on providing aid and support to those in need, embodying the spirit of compassion and humanitarianism through various outreach programs and activities.",
-      "image": "/Pic/Project/Leo මනුදම් මෙහෙවර.png",
-      "status": "Completed",
-      "impact": "40+ attendees expected"
-    },
-    {
-      "id": 27,
-      "title": "Canva Workshop 👩‍💻",
-      "category": "Skill Development",
-      "description": "A practical workshop aimed at teaching participants how to effectively use Canva for graphic design, enhancing their ability to create visually appealing content for personal and professional use.",
-      "image": "/Pic/Project/Canva Workshop 👩‍💻.png",
-      "status": "Completed",
-      "impact": "50+ attendees expected"
-    },
-    {
-      "id": 28,
-      "title": "Happy paws🐾💛",
-      "category": "Environment & Animal Welfare",
-      "description": "A fun and engaging event organized by LEO club members to celebrate the joy of pets and their companionship, bringing together pet lovers and fostering a sense of community.",
-      "image": "/Pic/Project/Happy paws🐾💛.png",
-      "status": "Completed",
-      "impact": "40+ participants expected"
-    },
-    {
-      "id": 29,
-      "title": "Haunted DJ Night",
-      "category": "Fellowship & Entertainment",
-      "description": "A spooky DJ night event organized by LEO club members, featuring eerie music and a haunted atmosphere to create a unique and memorable experience.",
-      "image": "/Pic/Project/Haunted DJ Night.png",
-      "status": "Upcoming",
-      "impact": "30+ participants expected"
-    },
-    {
-      "id": 30,
-      "title": "Safe and strong phase 2",
-      "category": "Adventure & Wellness",
-      "description": "The second phase of the Safe and Strong initiative.",
-      "image": "/Pic/Project/Safe and strong phase 2.png",
-      "status": "Completed",
-      "impact": "60+ participants engaged"
-    },
-    {
-      "id": 31,
-      "title": "Official visit - GM",
-      "category": "External Affairs",
-      "description": "An official visit by the Lions Clubs in sri lanka to our club.",
-      "image": "/Pic/Project/Official visit - GM.png",
-      "status": "Completed",
-      "impact": "30+ members connected"
-    },
-    {
-      "id": 32,
-      "title": "Pink Ribbon 2.0 (Phase 2)",
-      "category": "Health Awareness",
-      "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
-      "image": "/Pic/Project/Pink Ribbon 2.0 (Phase 2).png",
-      "status": "Completed",
-      "impact": "120+ women screened"
-    },
-    {
-      "id": 33,
-      "title": "Linkedin leo edition",
-      "category": "Adventure & Wellness",
-      "description": "Join interactive of university of peradeniya leo club and university of ruhuna leo club",
-      "image": "/Pic/Project/Linkedin.png",
-      "status": "Completed",
-      "impact": "50+ participants engaged"
-    },
-    {
-      "id": 34,
-      "title": "Leo Rota Avurudu",
-      "category": "Fellowship & Entertainment",
-      "description": "A festive celebration organized by LEO club members to welcome the Sinhala and Tamil New Year, featuring traditional games, cultural performances, and a joyful atmosphere for members to connect and celebrate together.",
-      "image": "/Pic/Project/Leo Rota Avurudu.png",
-      "status": "Completed",
-      "impact": "50+ participants expected"
-    },
-    {
-      "id": 35,
-      "title": "සුරක්ෂාවට හඬක්",
-      "category": "Social Awareness",
-      "description": "A social awareness campaign focused on advocating for safety and security in the community, raising awareness about important safety issues, and promoting proactive measures to create a safer environment for all.",
-      "image": "/Pic/Project/සුරක්ෂාවට හඬක්.png",
-      "status": "Completed",
-      "impact": "50+ community members reached"
-    },
-    {
-      "id": 36,
-      "title": "Vivid",
-      "category": "Health & Safety",
-      "description": "Giving spectors to the visually impaired people",
-      "image": "/Pic/Project/Vivid.png",
-      "status": "Completed",
-      "impact": "50+ participants expected"
-    },
-    {
-      "id": 37,
-      "title": "Little Heroes",
-      "category": "Fellowship & Charity",
-      "description": "A joyful evening with childeren who get cancer treatment at the hospital. We organized fun activities, games, and entertainment to bring smiles and happiness to these little heroes during their challenging journey.",
-      "image": "/Pic/Project/Little Heroes.png",
-      "status": "Completed",
-      "impact": "30+ participants expected"
-    },
-    {
-      "id": 38,
-      "title": "සෙනෙහසේ වසන්තය",
-      "category": "Fellowship & Entertainment",
-      "description": "A vibrant and colorful spring festival organized by LEO club members.",
-      "image": "/Pic/Project/සෙනෙහසේ වසන්තය.png",
-      "status": "Completed",
-      "impact": "30+ participants expected"
-    },
-    {
-      "id": 39,
-      "title": "LEO for CAREER",
-      "category": "Fellowship & Entertainment",
-      "description": "A career development event organized by LEO club members, providing a platform for members to explore opportunities and enhance their professional skills.",
-      "image": "/Pic/Project/LEO for CAREER.png",
-      "status": "Completed",
-      "impact": "40+ participants expected"
-    },
-    {
-      "id": 40,
-      "title": "Vivid (phase 2)",
-      "category": "Fellowship & Entertainment",
-      "description": "The second phase of the Vivid project, continuing our efforts to provide spectors to visually impaired individuals and enhance their quality of life through improved vision and accessibility.",
-      "image": "/Pic/Project/Vivid (phase 2).png",
-      "status": "Completed",
-      "impact": "40+ participants expected"
-    },
-    {
-      "id": 41,
-      "title": "BOD Board Transition",
-      "category": "Fellowship",
-      "description": "2026/2027 Term project. The official transition of the Board of Directors, welcoming the new leaders for the term.",
-      "image": "/Pic/Project/BOD Board Transition 2026.jpeg",
-      "status": "26/27 Term",
-      "impact": "New board officially took over"
-    },
-    {
-      "id": 42,
-      "title": "Eco Tide",
-      "category": "Environment",
-      "description": "2026/2027 Term project. An environmental initiative focused on cleaning and preserving our natural ecosystems.",
-      "image": "/Pic/Project/Eco Tide 2026.jpeg",
-      "status": "26/27 Term",
-      "impact": "Environmental awareness raised"
-    },
-    {
-      "id": 43,
-      "title": "Samagi Sathkara",
-      "category": "Community Service",
-      "description": "2026/2027 Term project. A community service project aimed at helping those in need and fostering unity.",
-      "image": "/Pic/Project/Samagi Sathkara 2026.jpeg",
-      "status": "26/27 Term",
-      "impact": "Community supported"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "ALPHA U 3.0",
+    "category": "Education",
+    "description": "An innovative educational program designed to enhance university students' leadership skills and academic excellence through collaborative learning and mentorship opportunities.",
+    "image": "/Pic/Project/ALPHA U 3.0.png",
+    "status": "Completed",
+    "impact": "50+ students empowered"
+  },
+  {
+    "id": 2,
+    "title": "Bloom & Blues",
+    "category": "Mental Health",
+    "description": "A mental health awareness and support initiative focusing on emotional well-being, stress management, and creating a supportive community for students and youth.",
+    "image": "/Pic/Project/Bloom & Blues.png",
+    "status": "Upcoming",
+    "impact": "30+ participants reached"
+  },
+  {
+    "id": 3,
+    "title": "Blooming Thoughts 🌸💜",
+    "category": "Personal Development",
+    "description": "A creative writing and expression workshop series that encourages self-reflection, creativity, and positive thinking among participants to foster personal growth.",
+    "image": "/Pic/Project/Blooming Thoughts 🌸💜.png",
+    "status": "Completed",
+    "impact": "25+ creative minds inspired"
+  },
+  {
+    "id": 4,
+    "title": "Dreams Over Drugs",
+    "category": "Social Awareness",
+    "description": "A comprehensive drug prevention and awareness campaign targeting youth, promoting healthy lifestyle choices and providing support for addiction recovery.",
+    "image": "/Pic/Project/Dreams Over Drugs.png",
+    "status": "Completed",
+    "impact": "75+ youth educated"
+  },
+  {
+    "id": 5,
+    "title": "EcoBiz",
+    "category": "Environment & Business",
+    "description": "An eco-entrepreneurship initiative that combines environmental sustainability with business innovation, encouraging green business solutions and sustainable practices.",
+    "image": "/Pic/Project/EcoBiz.png",
+    "status": "Completed",
+    "impact": "15+ green startups supported"
+  },
+  {
+    "id": 6,
+    "title": "Fiesta de Leos",
+    "category": "Cultural & Social",
+    "description": "An annual celebration and cultural festival organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
+    "image": "/Pic/Project/Fiesta de Leos.png",
+    "status": "Upcoming",
+    "impact": "150+ attendees celebrated"
+  },
+  {
+    "id": 7,
+    "title": "BOD trip",
+    "category": "Fellowship",
+    "description": "A bonding and recreational trip organized for the Board of Directors to enhance teamwork, leadership skills, and camaraderie among club leaders through shared experiences and activities.",
+    "image": "/Pic/Project/BOD trip.png",
+    "status": "Completed",
+    "impact": "leaders bonded"
+  },
+  {
+    "id": 8,
+    "title": "LEO Mini Hike",
+    "category": "Adventure & Wellness",
+    "description": "An outdoor adventure and fitness initiative promoting physical wellness, team building, and environmental appreciation through organized hiking activities and nature exploration.",
+    "image": "/Pic/Project/LEO Mini Hike .png",
+    "status": "Upcoming",
+    "impact": "35+ hikers participated"
+  },
+  {
+    "id": 9,
+    "title": "Pink Ribbon OC",
+    "category": "Health Awareness",
+    "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
+    "image": "/Pic/Project/Pink Ribbon OC.png",
+    "status": "Completed",
+    "impact": "120+ women screened"
+  },
+  {
+    "id": 10,
+    "title": "විදුතරණ 3.0",
+    "category": "Technology & Innovation",
+    "description": "An advanced technological innovation project focusing on electrical and electronic solutions, promoting STEM education and practical application of engineering concepts among students.",
+    "image": "/Pic/Project/විදුතරණ 3.0.png",
+    "status": "Completed",
+    "impact": "45+ students trained"
+  },
+  {
+    "id": 11,
+    "title": "විදුතරණ 4.0",
+    "category": "Technology & Innovation",
+    "description": "The fourth iteration of the flagship technology project, advancing digital innovation, IoT solutions, and smart technology implementation for community development and education.",
+    "image": "/Pic/Project/විදුතරණ 4.0.png",
+    "status": "Completed",
+    "impact": "60+ participants engaged"
+  },
+  {
+    "id": 12,
+    "title": "සෙනෙහසේ චාරිකා",
+    "category": "Community Service",
+    "description": "A compassionate community outreach program providing support, care, and essential services to underprivileged families and elderly community members with love and dedication.",
+    "image": "/Pic/Project/සෙනෙහසේ චාරිකා.png",
+    "status": "Upcoming",
+    "impact": "80+ families supported"
+  },
+  {
+    "id": 13,
+    "title": "සෙනෙහසෙන් පොතක්",
+    "category": "Community Service",
+    "description": "A book donation for the people who effect from the flood reasontly occured in Sri Lanka.",
+    "image": "/Pic/Project/සෙනෙහසෙන් පොතක්.png",
+    "status": "Completed",
+    "impact": "Help student to recover from flood"
+  },
+  {
+    "id": 14,
+    "title": "Lion's Get",
+    "category": "Fellowship",
+    "description": "A gathering event for Lions and LEOs to foster fellowship, share experiences, and strengthen the bond between members through social activities and networking opportunities.",
+    "image": "/Pic/Project/Lion's Get.png",
+    "status": "Completed",
+    "impact": "30+ members connected"
+  },
+  {
+    "id": 15,
+    "title": "Vision Quest Phase 1",
+    "category": "External Affairs",
+    "description": "As the first phase, we successfully conducted an English Motivation and Empowerment Program at Gampola St. Andrew's College, incorporating practical activities. ",
+    "image": "/Pic/Project/Vision Quest Phase 1.png",
+    "status": "Completed",
+    "impact": "100+ students empowered"
+  },
+  {
+    "id": 16,
+    "title": "Safe and Strong Phase 1",
+    "category": "Health & Safety",
+    "description": "Preschool awareness session",
+    "image": "/Pic/Project/Safe and Strong Phase 1.png",
+    "status": "Completed",
+    "impact": "50+ preschoolers educated"
+  },
+  {
+    "id": 17,
+    "title": "Future Leaders",
+    "category": "Leadership Development",
+    "description": "A leadership development program aimed at nurturing future leaders among youth through skill-building",
+    "image": "/Pic/Project/Future Leaders.png",
+    "status": "Completed",
+    "impact": "50+ youth trained"
+  },
+  {
+    "id": 18,
+    "title": "Wings of Life",
+    "category": "Environment & Education",
+    "description": "An educational workshop teaching students how to build bee houses at home and providing hands-on experience with beekeeping. The project promotes environmental awareness, pollinator conservation, and sustainable practices while inspiring youth to protect vital ecosystems.",
+    "image": "/Pic/Project/Wings of Life.jpeg",
+    "status": "Completed",
+    "impact": "50+ students trained in beekeeping"
+  },
+  {
+    "id": 19,
+    "title": "Secret Santa",
+    "category": "Fellowship & Charity",
+    "description": "A heartwarming Christmas celebration bringing LEO members together for a gift exchange and festive fellowship. The event spreads holiday cheer while also extending kindness to underprivileged children through charitable giving.",
+    "image": "/Pic/Project/Secret Santa.jpg",
+    "status": "Completed",
+    "impact": "40+ members participated, 50+ gifts exchanged"
+  },
+  {
+    "id": 20,
+    "title": "Sankalana 2.0",
+    "category": "Elder Care",
+    "description": "A dedicated avenue focusing on the welfare and support of senior citizens. The program provides companionship, healthcare awareness, recreational activities, and essential assistance to elderly community members, honoring their contributions to society.",
+    "image": "/Pic/Project/Sankalana 2.0.jpeg",
+    "status": "Completed",
+    "impact": "60+ seniors supported"
+  },
+  {
+    "id": 21,
+    "title": "ආරෝග්‍යා 🩺",
+    "category": "Community Service",
+    "description": "A health-focused community service initiative providing medical assistance, health education, and wellness support to underserved populations, promoting overall well-being and access to healthcare resources.",
+    "image": "/Pic/Project/ආරෝග්‍යා 🩺.png",
+    "status": "Completed",
+    "impact": "30+ individuals benefited"
+  },
+  {
+    "id": 22,
+    "title": "Luminara 2.0 💖🌸",
+    "category": "Fellowship & Entertainment",
+    "description": "musical concert organized by LEO club members, showcasing diverse talents, fostering unity, and strengthening community bonds through entertainment and cultural exchange.",
+    "image": "/Pic/Project/Luminara 2.0 💖🌸.png",
+    "status": "Completed",
+    "impact": "50+ attendees celebrated"
+  },
+  {
+    "id": 23,
+    "title": "තීර්ථ 🖋️",
+    "category": "Literary & Cultural",
+    "description": "A literary and cultural initiative that celebrates the rich heritage of Sri Lankan literature and culture through workshops, readings, and creative expression, fostering a deeper appreciation for the arts.",
+    "image": "/Pic/Project/තීර්ථ 🖋️.png",
+    "status": "Completed",
+    "impact": "40+ participants engaged"
+  },
+  {
+    "id": 24,
+    "title": "Photoshop Workshop",
+    "category": "Skill Development",
+    "description": "A hands-on workshop designed to teach participants the fundamentals of Adobe Photoshop, enhancing their graphic design skills and creativity for personal and professional projects.",
+    "image": "/Pic/Project/Photoshop Workshop.png",
+    "status": "Completed",
+    "impact": "40+ attendees expected"
+  },
+  {
+    "id": 25,
+    "title": "Zero to Hero",
+    "category": "Fellowship & Entertainment",
+    "description": "A talent show organized by LEO club members, providing a platform for members to showcase their unique talents and fostering camaraderie through entertainment and friendly competition.",
+    "image": "/Pic/Project/Zero to Hero.png",
+    "status": "Completed",
+    "impact": "30+ participants expected"
+  },
+  {
+    "id": 26,
+    "title": "Leo මනුදම් මෙහෙවර",
+    "category": "Community Service",
+    "description": "A community service initiative focused on providing aid and support to those in need, embodying the spirit of compassion and humanitarianism through various outreach programs and activities.",
+    "image": "/Pic/Project/Leo මනුදම් මෙහෙවර.png",
+    "status": "Completed",
+    "impact": "40+ attendees expected"
+  },
+  {
+    "id": 27,
+    "title": "Canva Workshop 👩‍💻",
+    "category": "Skill Development",
+    "description": "A practical workshop aimed at teaching participants how to effectively use Canva for graphic design, enhancing their ability to create visually appealing content for personal and professional use.",
+    "image": "/Pic/Project/Canva Workshop 👩‍💻.png",
+    "status": "Completed",
+    "impact": "50+ attendees expected"
+  },
+  {
+    "id": 28,
+    "title": "Happy paws🐾💛",
+    "category": "Environment & Animal Welfare",
+    "description": "A fun and engaging event organized by LEO club members to celebrate the joy of pets and their companionship, bringing together pet lovers and fostering a sense of community.",
+    "image": "/Pic/Project/Happy paws🐾💛.png",
+    "status": "Completed",
+    "impact": "40+ participants expected"
+  },
+  {
+    "id": 29,
+    "title": "Haunted DJ Night",
+    "category": "Fellowship & Entertainment",
+    "description": "A spooky DJ night event organized by LEO club members, featuring eerie music and a haunted atmosphere to create a unique and memorable experience.",
+    "image": "/Pic/Project/Haunted DJ Night.png",
+    "status": "Upcoming",
+    "impact": "30+ participants expected"
+  },
+  {
+    "id": 30,
+    "title": "Safe and strong phase 2",
+    "category": "Adventure & Wellness",
+    "description": "The second phase of the Safe and Strong initiative.",
+    "image": "/Pic/Project/Safe and strong phase 2.png",
+    "status": "Completed",
+    "impact": "60+ participants engaged"
+  },
+  {
+    "id": 31,
+    "title": "Official visit - GM",
+    "category": "External Affairs",
+    "description": "An official visit by the Lions Clubs in sri lanka to our club.",
+    "image": "/Pic/Project/Official visit - GM.png",
+    "status": "Completed",
+    "impact": "30+ members connected"
+  },
+  {
+    "id": 32,
+    "title": "Pink Ribbon 2.0 (Phase 2)",
+    "category": "Health Awareness",
+    "description": "A breast cancer awareness and support campaign dedicated to educating the community about early detection, prevention, and supporting survivors through outreach programs.",
+    "image": "/Pic/Project/Pink Ribbon 2.0 (Phase 2).png",
+    "status": "Completed",
+    "impact": "120+ women screened"
+  },
+  {
+    "id": 33,
+    "title": "Linkedin leo edition",
+    "category": "Adventure & Wellness",
+    "description": "Join interactive of university of peradeniya leo club and university of ruhuna leo club",
+    "image": "/Pic/Project/Linkedin.png",
+    "status": "Completed",
+    "impact": "50+ participants engaged"
+  },
+  {
+    "id": 34,
+    "title": "Leo Rota Avurudu",
+    "category": "Fellowship & Entertainment",
+    "description": "A festive celebration organized by LEO club members to welcome the Sinhala and Tamil New Year, featuring traditional games, cultural performances, and a joyful atmosphere for members to connect and celebrate together.",
+    "image": "/Pic/Project/Leo Rota Avurudu.png",
+    "status": "Completed",
+    "impact": "50+ participants expected"
+  },
+  {
+    "id": 35,
+    "title": "සුරක්ෂාවට හඬක්",
+    "category": "Social Awareness",
+    "description": "A social awareness campaign focused on advocating for safety and security in the community, raising awareness about important safety issues, and promoting proactive measures to create a safer environment for all.",
+    "image": "/Pic/Project/සුරක්ෂාවට හඬක්.png",
+    "status": "Completed",
+    "impact": "50+ community members reached"
+  },
+  {
+    "id": 36,
+    "title": "Vivid",
+    "category": "Health & Safety",
+    "description": "Giving spectors to the visually impaired people",
+    "image": "/Pic/Project/Vivid.png",
+    "status": "Completed",
+    "impact": "50+ participants expected"
+  },
+  {
+    "id": 37,
+    "title": "Little Heroes",
+    "category": "Fellowship & Charity",
+    "description": "A joyful evening with childeren who get cancer treatment at the hospital. We organized fun activities, games, and entertainment to bring smiles and happiness to these little heroes during their challenging journey.",
+    "image": "/Pic/Project/Little Heroes.png",
+    "status": "Completed",
+    "impact": "30+ participants expected"
+  },
+  {
+    "id": 38,
+    "title": "සෙනෙහසේ වසන්තය",
+    "category": "Fellowship & Entertainment",
+    "description": "A vibrant and colorful spring festival organized by LEO club members.",
+    "image": "/Pic/Project/සෙනෙහසේ වසන්තය.png",
+    "status": "Completed",
+    "impact": "30+ participants expected"
+  },
+  {
+    "id": 39,
+    "title": "LEO for CAREER",
+    "category": "Fellowship & Entertainment",
+    "description": "A career development event organized by LEO club members, providing a platform for members to explore opportunities and enhance their professional skills.",
+    "image": "/Pic/Project/LEO for CAREER.png",
+    "status": "Completed",
+    "impact": "40+ participants expected"
+  },
+  {
+    "id": 40,
+    "title": "Vivid (phase 2)",
+    "category": "Fellowship & Entertainment",
+    "description": "The second phase of the Vivid project, continuing our efforts to provide spectors to visually impaired individuals and enhance their quality of life through improved vision and accessibility.",
+    "image": "/Pic/Project/Vivid (phase 2).png",
+    "status": "Completed",
+    "impact": "40+ participants expected"
+  },
+  {
+    "id": 41,
+    "title": "BOD Board Transition",
+    "category": "Fellowship",
+    "description": "2026/2027 Term project. The official transition of the Board of Directors, welcoming the new leaders for the term.",
+    "image": "/Pic/Project/BOD Board Transition 2026.jpeg",
+    "status": "26/27 Term",
+    "impact": "New board officially took over"
+  },
+  {
+    "id": 42,
+    "title": "Eco Tide",
+    "category": "Environment",
+    "description": "2026/2027 Term project. An environmental initiative focused on cleaning and preserving our natural ecosystems.",
+    "image": "/Pic/Project/Eco Tide 2026.jpeg",
+    "status": "26/27 Term",
+    "impact": "Environmental awareness raised"
+  },
+  {
+    "id": 43,
+    "title": "Samagi Sathkara",
+    "category": "Community Service",
+    "description": "2026/2027 Term project. A community service project aimed at helping those in need and fostering unity.",
+    "image": "/Pic/Project/Samagi Sathkara 2026.jpeg",
+    "status": "26/27 Term",
+    "impact": "Community supported"
+  },
+  {
+    "id": 44,
+    "title": "Sathkara",
+    "category": "Community Service",
+    "description": "\"Sathkar\" is a community service initiative by the Lions Club of Kandy Senkadagala and the Leo Club of the University of Peradeniya to prepare and distribute 1,000 sandwich parcels for the Esala Perahera festival.",
+    "image": "/Pic/Project/Sathkara.jpeg",
+    "status": "26/27 Term",
+    "impact": "Sathkar initiative successfully mobilized volunteers to prepare and distribute 1,000 sandwich parcels to support the community during the Esala Perahera festival."
+  },
+  {
+    "id": 45,
+    "title": "පරිසරයයි ජීවිතයයි",
+    "category": "Community Service",
+    "description": "An environmental cleanup and awareness campaign targeting plastic waste left behind during the Kandy Esala Perahera.",
+    "image": "/Pic/Project/පරිසරයයි ජීවිතයයි.jpeg",
+    "status": "26/27 Term",
+    "impact": "Mitigates festival pollution by collecting discarded plastics and promoting sustainable waste management in Kandy."
+  }
+]
