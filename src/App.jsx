@@ -49,7 +49,6 @@ function App() {
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
             <Route path="*" element={<Notfound />} />
-
           </Routes>
         </main>
         <Footer />

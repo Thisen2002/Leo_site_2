@@ -17,11 +17,15 @@ function ManageProjects() {
     description: '',
     status: 'Upcoming',
     impact: '',
-    image_url: ''
+    image_url: '',
+    term: '26/27'
   })
   
   const [selectedFile, setSelectedFile] = useState(null)
   const [uploading, setUploading] = useState(false)
+  
+  // Filter state for Admin View
+  const [filterTerm, setFilterTerm] = useState('All')
 
   useEffect(() => {
     fetchProjects()
@@ -37,6 +41,15 @@ function ManageProjects() {
     if (error) {
       console.error('Error fetching projects:', error)
     } else {
+      // Auto-fix legacy statuses for the admin (since they have auth privileges)
+      const invalidProjects = data.filter(p => p.status === '26/27 Term')
+      if (invalidProjects.length > 0) {
+        console.log(`Auto-fixing ${invalidProjects.length} legacy project statuses...`)
+        for (const p of invalidProjects) {
+          await supabase.from('projects').update({ status: 'Ongoing' }).eq('id', p.id)
+          p.status = 'Ongoing' // update local state
+        }
+      }
       setProjects(data)
     }
     setLoading(false)
@@ -44,7 +57,17 @@ function ManageProjects() {
 
   const handleOpenModal = (project = null) => {
     if (project) {
-      setFormData(project)
+      // Fix legacy status
+      let sanitizedStatus = project.status;
+      if (!['Upcoming', 'Completed', 'Ongoing'].includes(sanitizedStatus)) {
+        sanitizedStatus = 'Ongoing';
+      }
+
+      setFormData({
+        ...project,
+        status: sanitizedStatus,
+        term: project.term || '25/26'
+      })
       setIsEditing(true)
     } else {
       setFormData({
@@ -54,7 +77,8 @@ function ManageProjects() {
         description: '',
         status: 'Upcoming',
         impact: '',
-        image_url: ''
+        image_url: '',
+        term: '26/27'
       })
       setIsEditing(false)
     }
@@ -64,7 +88,7 @@ function ManageProjects() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
-    setFormData({ id: null, title: '', category: '', description: '', status: 'Upcoming', impact: '', image_url: '' })
+    setFormData({ id: null, title: '', category: '', description: '', status: 'Upcoming', impact: '', image_url: '', term: '26/27' })
     setSelectedFile(null)
   }
 
@@ -75,17 +99,14 @@ function ManageProjects() {
   }
 
   const compressAndUploadImage = async (file) => {
-    // 1. Compress the image (Crucial for Free Tier limits)
     const options = {
-      maxSizeMB: 0.3, // Compress to ~300KB
+      maxSizeMB: 0.3, 
       maxWidthOrHeight: 1920,
       useWebWorker: true
     }
     
     try {
       const compressedFile = await imageCompression(file, options)
-      
-      // 2. Upload to Supabase Storage Bucket
       const fileExt = compressedFile.name.split('.').pop() || 'jpg'
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
       const filePath = `${fileName}`
@@ -95,8 +116,6 @@ function ManageProjects() {
         .upload(filePath, compressedFile, { upsert: true })
 
       if (error) throw error
-
-      // 3. Return just the path/filename, NOT the full URL
       return data.path
     } catch (error) {
       console.error('Error uploading image:', error)
@@ -112,13 +131,10 @@ function ManageProjects() {
     try {
       let finalImagePath = formData.image_url
 
-      // If a new file was selected, compress and upload it first
       if (selectedFile) {
         const uploadedPath = await compressAndUploadImage(selectedFile)
         if (uploadedPath) {
           finalImagePath = uploadedPath
-          
-          // Optionally, if editing, we could delete the old image here from the bucket
         }
       }
 
@@ -128,11 +144,11 @@ function ManageProjects() {
         description: formData.description,
         status: formData.status,
         impact: formData.impact,
-        image_url: finalImagePath
+        image_url: finalImagePath,
+        term: formData.term
       }
 
       if (isEditing) {
-        // Update existing project
         const { error } = await supabase
           .from('projects')
           .update(projectData)
@@ -140,7 +156,6 @@ function ManageProjects() {
         
         if (error) throw error
       } else {
-        // Insert new project
         const { error } = await supabase
           .from('projects')
           .insert([projectData])
@@ -149,7 +164,7 @@ function ManageProjects() {
       }
 
       handleCloseModal()
-      fetchProjects() // Refresh list
+      fetchProjects() 
     } catch (error) {
       console.error('Error saving project:', error)
       alert('Failed to save project.')
@@ -162,7 +177,6 @@ function ManageProjects() {
     if (!window.confirm('Are you sure you want to delete this project?')) return
 
     try {
-      // 1. Delete the record from the database
       const { error: dbError } = await supabase
         .from('projects')
         .delete()
@@ -170,29 +184,42 @@ function ManageProjects() {
 
       if (dbError) throw dbError
 
-      // 2. Delete the associated image from the storage bucket to save space!
-      // (Only try to delete if it looks like a bucket path, not a legacy JSON path like /Pic/...)
       if (imagePath && !imagePath.startsWith('/Pic/')) {
         await supabase.storage
           .from('project-images')
           .remove([imagePath])
       }
 
-      fetchProjects() // Refresh list
+      fetchProjects()
     } catch (error) {
       console.error('Error deleting project:', error)
       alert('Failed to delete project.')
     }
   }
 
+  const filteredProjects = filterTerm === 'All' 
+    ? projects 
+    : projects.filter(p => p.term === filterTerm)
+
   return (
     <div className="manage-projects">
       <div className="manager-header">
         <h2>Manage Projects</h2>
-        <button className="add-btn" onClick={() => handleOpenModal()}>
-          <Plus size={18} />
-          Add New Project
-        </button>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <select 
+            value={filterTerm} 
+            onChange={(e) => setFilterTerm(e.target.value)}
+            style={{ padding: '0.5rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            <option value="All">All Terms</option>
+            <option value="26/27">26/27</option>
+            <option value="25/26">25/26</option>
+          </select>
+          <button className="add-btn" onClick={() => handleOpenModal()}>
+            <Plus size={18} />
+            Add New Project
+          </button>
+        </div>
       </div>
 
       <div className="projects-table-container">
@@ -203,23 +230,27 @@ function ManageProjects() {
             <thead>
               <tr>
                 <th>Title</th>
+                <th>Term</th>
                 <th>Category</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {projects.map((project) => (
+              {filteredProjects.map((project) => (
                 <tr key={project.id}>
                   <td>{project.title}</td>
+                  <td>
+                    <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{project.term || '25/26'}</span>
+                  </td>
                   <td>{project.category}</td>
                   <td>
                     <span style={{ 
                       padding: '4px 8px', 
                       borderRadius: '12px', 
                       fontSize: '0.85rem',
-                      background: project.status === 'Completed' ? 'rgba(34, 197, 94, 0.2)' : 'rgba(234, 179, 8, 0.2)',
-                      color: project.status === 'Completed' ? '#4ade80' : '#fde047'
+                      background: project.status === 'Completed' ? 'rgba(34, 197, 94, 0.2)' : (project.status === 'Ongoing' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(234, 179, 8, 0.2)'),
+                      color: project.status === 'Completed' ? '#4ade80' : (project.status === 'Ongoing' ? '#60a5fa' : '#fde047')
                     }}>
                       {project.status}
                     </span>
@@ -241,7 +272,6 @@ function ManageProjects() {
         )}
       </div>
 
-      {/* Add/Edit Modal */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -261,8 +291,12 @@ function ManageProjects() {
                 
                 <div className="form-group" style={{ display: 'flex', gap: '1rem' }}>
                   <div style={{ flex: 1 }}>
-                    <label>Category</label>
-                    <input type="text" value={formData.category} onChange={(e) => setFormData({...formData, category: e.target.value})} required />
+                    <label>Leastic Term</label>
+                    <select value={formData.term} onChange={(e) => setFormData({...formData, term: e.target.value})} required>
+                      <option value="26/27">26/27</option>
+                      <option value="25/26">25/26</option>
+                      <option value="24/25">24/25</option>
+                    </select>
                   </div>
                   <div style={{ flex: 1 }}>
                     <label>Status</label>
@@ -272,6 +306,11 @@ function ManageProjects() {
                       <option value="Ongoing">Ongoing</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="form-group">
+                  <label>Category</label>
+                  <input type="text" value={formData.category} onChange={(e) => setFormData({...formData, category: e.target.value})} required />
                 </div>
 
                 <div className="form-group">
@@ -298,7 +337,7 @@ function ManageProjects() {
               <div className="modal-footer">
                 <button type="button" className="cancel-btn" onClick={handleCloseModal}>Cancel</button>
                 <button type="submit" className="save-btn" disabled={uploading}>
-                  {uploading ? 'Saving & Compressing...' : 'Save Project'}
+                  {uploading ? 'Saving...' : 'Save Project'}
                 </button>
               </div>
             </form>

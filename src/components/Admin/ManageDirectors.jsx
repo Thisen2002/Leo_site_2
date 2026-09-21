@@ -16,11 +16,14 @@ function ManageDirectors() {
     position: '',
     email: '',
     linkedin: '',
-    image_url: ''
+    image_url: '',
+    term: '26/27'
   })
   
   const [selectedFile, setSelectedFile] = useState(null)
   const [uploading, setUploading] = useState(false)
+  
+  const [filterTerm, setFilterTerm] = useState('All')
 
   useEffect(() => {
     fetchDirectors()
@@ -31,7 +34,7 @@ function ManageDirectors() {
     const { data, error } = await supabase
       .from('avenue_directors')
       .select('*')
-      .order('id', { ascending: true }) // Maintains natural order
+      .order('id', { ascending: true }) 
     
     if (error) {
       console.error('Error fetching directors:', error)
@@ -43,7 +46,10 @@ function ManageDirectors() {
 
   const handleOpenModal = (director = null) => {
     if (director) {
-      setFormData(director)
+      setFormData({
+        ...director,
+        term: director.term || '25/26'
+      })
       setIsEditing(true)
     } else {
       setFormData({
@@ -53,7 +59,8 @@ function ManageDirectors() {
         position: '',
         email: '',
         linkedin: '',
-        image_url: ''
+        image_url: '',
+        term: '26/27'
       })
       setIsEditing(false)
     }
@@ -63,7 +70,7 @@ function ManageDirectors() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false)
-    setFormData({ id: null, avenue: '', name: '', position: '', email: '', linkedin: '', image_url: '' })
+    setFormData({ id: null, avenue: '', name: '', position: '', email: '', linkedin: '', image_url: '', term: '26/27' })
     setSelectedFile(null)
   }
 
@@ -120,7 +127,8 @@ function ManageDirectors() {
         position: formData.position,
         email: formData.email,
         linkedin: formData.linkedin,
-        image_url: finalImagePath
+        image_url: finalImagePath,
+        term: formData.term
       }
 
       if (isEditing) {
@@ -170,14 +178,29 @@ function ManageDirectors() {
     }
   }
 
+  const filteredDirectors = filterTerm === 'All'
+    ? directors
+    : directors.filter(d => d.term === filterTerm)
+
   return (
     <div className="manage-projects">
       <div className="manager-header">
         <h2>Manage Avenue Directors</h2>
-        <button className="add-btn" onClick={() => handleOpenModal()}>
-          <Plus size={18} />
-          Add Director
-        </button>
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <select 
+            value={filterTerm} 
+            onChange={(e) => setFilterTerm(e.target.value)}
+            style={{ padding: '0.5rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)', color: 'white', border: '1px solid rgba(255,255,255,0.1)' }}
+          >
+            <option value="All">All Terms</option>
+            <option value="26/27">26/27</option>
+            <option value="25/26">25/26</option>
+          </select>
+          <button className="add-btn" onClick={() => handleOpenModal()}>
+            <Plus size={18} />
+            Add Director
+          </button>
+        </div>
       </div>
 
       <div className="projects-table-container">
@@ -188,13 +211,14 @@ function ManageDirectors() {
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Term</th>
                 <th>Position</th>
                 <th>Avenue</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {directors.map((director) => (
+              {filteredDirectors.map((director) => (
                 <tr key={director.id}>
                   <td>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -217,6 +241,9 @@ function ManageDirectors() {
                       </div>
                       {director.name}
                     </div>
+                  </td>
+                  <td>
+                    <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{director.term || '25/26'}</span>
                   </td>
                   <td>{director.position}</td>
                   <td>{director.avenue}</td>
@@ -249,9 +276,19 @@ function ManageDirectors() {
             
             <form onSubmit={handleSubmit} className="modal-form">
               <div className="modal-body">
-                <div className="form-group">
-                  <label>Name</label>
-                  <input type="text" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
+                <div className="form-group" style={{ display: 'flex', gap: '1rem' }}>
+                  <div style={{ flex: 2 }}>
+                    <label>Name</label>
+                    <input type="text" value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} required />
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <label>Leastic Term</label>
+                    <select value={formData.term} onChange={(e) => setFormData({...formData, term: e.target.value})} required>
+                      <option value="26/27">26/27</option>
+                      <option value="25/26">25/26</option>
+                      <option value="24/25">24/25</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div className="form-group" style={{ display: 'flex', gap: '1rem' }}>

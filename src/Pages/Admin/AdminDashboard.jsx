@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../utils/supabase'
-import { LogOut, FolderKanban, Image as ImageIcon, Users, UserCheck, BookOpen } from 'lucide-react'
+import { LogOut, FolderKanban, Image as ImageIcon, Users, UserCheck, BookOpen, MonitorPlay } from 'lucide-react'
 import ManageProjects from '../../components/Admin/ManageProjects'
 import ManageGallery from '../../components/Admin/ManageGallery'
 import ManageExecutive from '../../components/Admin/ManageExecutive'
 import ManageDirectors from '../../components/Admin/ManageDirectors'
 import ManageResearch from '../../components/Admin/ManageResearch'
+import ManageHero from '../../components/Admin/ManageHero'
 import './Admin.css'
 
 function AdminDashboard() {
@@ -53,6 +54,14 @@ function AdminDashboard() {
         </div>
         
         <nav className="admin-nav">
+          <button 
+            className={`admin-nav-item ${activeTab === 'hero' ? 'active' : ''}`}
+            onClick={() => setActiveTab('hero')}
+          >
+            <MonitorPlay size={20} />
+            Hero Section
+          </button>
+
           <button 
             className={`admin-nav-item ${activeTab === 'projects' ? 'active' : ''}`}
             onClick={() => setActiveTab('projects')}
@@ -102,6 +111,7 @@ function AdminDashboard() {
 
       {/* Main Content Area */}
       <main className="admin-main-content">
+        {activeTab === 'hero' && <ManageHero />}
         {activeTab === 'projects' && <ManageProjects />}
         {activeTab === 'gallery' && <ManageGallery />}
         {activeTab === 'executive' && <ManageExecutive />}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import './Homepage.css' // Make sure to create this CSS file
+import { supabase } from '../utils/supabase'
+import './Homepage.css'
 import '../utils/scrollAnimations.css'
 import { 
   useScrollAnimation, 
@@ -9,17 +10,9 @@ import {
   ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
 
-// Import hero section images
-import img1 from '/Pic/hero_section/IMG-1.jpg'
-import img2 from '/Pic/hero_section/IMG-2.jpg'
-import img3 from '/Pic/hero_section/IMG-3.jpg'
-import img4 from '/Pic/hero_section/IMG-4.jpg'
-import img5 from '/Pic/hero_section/IMG-5.jpg'
-import img6 from '/Pic/hero_section/IMG-6.jpg'
-
 function Homepage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const heroImages = [img1, img2, img3, img4, img5, img6];
+  const [heroImages, setHeroImages] = useState([]);
 
   // Animation hooks
   const [heroRef, heroVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);
@@ -36,6 +29,31 @@ function Homepage() {
   const [ctaRef, ctaVisible] = useScrollAnimation(ANIMATION_CONFIGS.section);
 
   useEffect(() => {
+    const fetchHeroImages = async () => {
+      const { data, error } = await supabase
+        .from('hero_images')
+        .select('*')
+        .order('id', { ascending: true })
+      
+      if (!error && data && data.length > 0) {
+        // Convert to full URLs if needed
+        const urls = data.map(item => {
+          if (item.image_url.startsWith('/Pic/')) return item.image_url;
+          return supabase.storage.from('hero-images').getPublicUrl(item.image_url).data.publicUrl;
+        });
+        setHeroImages(urls);
+      } else {
+        // Fallback or empty state
+        setHeroImages(['/Pic/hero_section/IMG-1.jpg']); 
+      }
+    }
+
+    fetchHeroImages()
+  }, [])
+
+  useEffect(() => {
+    if (heroImages.length <= 1) return; // No need to cycle if only 1 or 0 images
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         (prevIndex + 1) % heroImages.length
@@ -53,7 +71,7 @@ function Homepage() {
         <div 
           className="hero-background"
           style={{
-            backgroundImage: `url(${heroImages[currentImageIndex]})`, 
+            backgroundImage: heroImages.length > 0 ? `url(${heroImages[currentImageIndex]})` : 'none', 
           }}
         />
         <div className="hero-overlay"></div>
