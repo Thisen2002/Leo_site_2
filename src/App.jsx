@@ -11,6 +11,8 @@ import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import Research from "./Pages/Research";
 import Blog from "./Pages/Blog";
+import AdminLogin from "./Pages/Admin/AdminLogin";
+import AdminDashboard from "./Pages/Admin/AdminDashboard";
 
 // Component to handle scrolling to top on route change
 function ScrollToTop() {
@@ -41,6 +43,11 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/research" element={<Research />} />
             <Route path="/blog" element={<Blog />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
             <Route path="*" element={<Notfound />} />
 
           </Routes>

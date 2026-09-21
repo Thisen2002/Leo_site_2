@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Gallery.css'
 import '../utils/scrollAnimations.css'
-import galleryData from '../data/gallery.json'
+import { supabase } from '../utils/supabase'
 import { 
   useScrollAnimation, 
   useStaggerAnimation,
@@ -9,16 +9,39 @@ import {
   ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
 
-const images = galleryData
-
 function Gallery() {
+  const [images, setImages] = useState([])
+  const [loading, setLoading] = useState(true)
   const [selectedImage, setSelectedImage] = useState(null)
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      setLoading(true)
+      const { data, error } = await supabase
+        .from('gallery')
+        .select('*')
+        .order('created_at', { ascending: false })
+      
+      if (error) {
+        console.error('Error fetching gallery:', error)
+      } else {
+        setImages(data || [])
+      }
+      setLoading(false)
+    }
+
+    fetchGallery()
+  }, [])
 
   // Animation hooks
   const [heroRef, heroVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);
-  const [galleryRef, galleryVisible] = useStaggerAnimation(images.length, 50);
+  const [galleryRef, galleryVisible] = useStaggerAnimation(images.length || 1, 50);
 
-  const filteredItems = images
+  const getImageUrl = (path) => {
+    if (!path) return ''
+    if (path.startsWith('/Pic/')) return path // Legacy local path
+    return supabase.storage.from('gallery-images').getPublicUrl(path).data.publicUrl
+  }
 
   const openLightbox = (item) => {
     setSelectedImage(item)
@@ -40,15 +63,15 @@ function Gallery() {
   }, [selectedImage])
 
   const nextImage = () => {
-    const currentIndex = filteredItems.findIndex(item => item === selectedImage)
-    const nextIndex = (currentIndex + 1) % filteredItems.length
-    setSelectedImage(filteredItems[nextIndex])
+    const currentIndex = images.findIndex(item => item.id === selectedImage.id)
+    const nextIndex = (currentIndex + 1) % images.length
+    setSelectedImage(images[nextIndex])
   }
 
   const prevImage = () => {
-    const currentIndex = filteredItems.findIndex(item => item === selectedImage)
-    const prevIndex = (currentIndex - 1 + filteredItems.length) % filteredItems.length
-    setSelectedImage(filteredItems[prevIndex])
+    const currentIndex = images.findIndex(item => item.id === selectedImage.id)
+    const prevIndex = (currentIndex - 1 + images.length) % images.length
+    setSelectedImage(images[prevIndex])
   }
 
   return (
@@ -67,37 +90,28 @@ function Gallery() {
       <main>
         <section className="gallery-content">
           <div className="container">
-            {/* Simple Gallery Grid (thumbnails only) */}
-            <div className="gallery-grid" ref={galleryRef}>
-              {filteredItems.map((item, index) => (
-                <button 
-                  key={item}
-                  className={`gallery-item gallery-item-animation ${galleryVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}
-                  onClick={() => openLightbox(item)}
-                  aria-label="View image"
-                >
-                  <div className="gallery-image">
-                    <img src={item} alt="" loading="lazy" />
-                  </div>
-                </button>
-              ))}
-            </div>
+            {loading ? (
+              <div style={{ textAlign: 'center', padding: '4rem', color: '#94a3b8' }}>
+                Loading gallery...
+              </div>
+            ) : (
+              <div className="gallery-grid" ref={galleryRef}>
+                {images.map((item, index) => (
+                  <button 
+                    key={item.id}
+                    className={`gallery-item gallery-item-animation ${galleryVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}
+                    onClick={() => openLightbox(item)}
+                    aria-label="View image"
+                  >
+                    <div className="gallery-image">
+                      <img src={getImageUrl(item.image_url)} alt="Gallery Image" loading="lazy" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </section>
-
-        {/* Photo Submission CTA
-        <section className="photo-submission-section">
-          <div className="container">
-            <div className="submission-content">
-              <h2>Share Your Leo Moments</h2>
-              <p>
-                Have photos from our events or projects? We'd love to feature them in our gallery! 
-                Help us document our journey and celebrate our achievements together.
-              </p>
-              <button className="submit-photos-btn">Submit Photos</button>
-            </div>
-          </div>
-        </section> */}
       </main>
 
       {/* Lightbox Modal */}
@@ -109,7 +123,7 @@ function Gallery() {
             <button className="nav-btn next-btn" onClick={nextImage}>›</button>
             
             <div className="lightbox-image">
-              <img src={selectedImage} alt="" />
+              <img src={getImageUrl(selectedImage.image_url)} alt="Enlarged gallery view" />
             </div>
           </div>
         </div>

@@ -1,17 +1,38 @@
 import React, { useState, useEffect } from 'react'
 import './Projects.css'
 import '../utils/scrollAnimations.css'
+import { supabase } from '../utils/supabase'
 import { 
   useScrollAnimation, 
   useStaggerAnimation,
   getAnimationClass,
   ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
-import projects from '../json files/Projects.json'
 
 function Projects() {
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
   const [statusFilter, setStatusFilter] = useState('All')
   
+  useEffect(() => {
+    const fetchProjects = async () => {
+      setLoading(true)
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .order('id', { ascending: false })
+      
+      if (error) {
+        console.error('Error fetching projects:', error)
+      } else {
+        setProjects(data || [])
+      }
+      setLoading(false)
+    }
+
+    fetchProjects()
+  }, [])
+
   // Get unique status values and add 'All' option
   const statusOptions = ['All', ...new Set(projects.map(project => project.status))]
 
@@ -28,25 +49,19 @@ function Projects() {
   const isMobile = window.innerWidth <= 768;
   const isSmallMobile = window.innerWidth <= 480;
   const staggerDelay = isSmallMobile ? 25 : isMobile ? 50 : 100;
-  const [projectsRef, projectsVisible] = useStaggerAnimation(filteredProjects.length, staggerDelay);
+  const [projectsRef, projectsVisible] = useStaggerAnimation(filteredProjects.length || 1, staggerDelay);
   
   // Fallback mechanism for mobile devices
   const [showFallback, setShowFallback] = useState(false);
   useEffect(() => {
+    if (filteredProjects.length === 0) return;
     const timer = setTimeout(() => {
       if (projectsVisible.size < filteredProjects.length) {
-        console.log(`Projects fallback triggered: ${projectsVisible.size}/${filteredProjects.length} projects visible`);
-        console.log('Projects mobile info:', {
-          isMobile,
-          isSmallMobile,
-          staggerDelay,
-          screenWidth: window.innerWidth
-        });
         setShowFallback(true);
       }
     }, 3000);
     return () => clearTimeout(timer);
-  }, [filteredProjects.length, projectsVisible.size, isMobile, isSmallMobile, staggerDelay]);
+  }, [filteredProjects.length, projectsVisible.size]);
   
   const getStatusBadgeClass = (status) => {
     switch (status) {
@@ -64,6 +79,13 @@ function Projects() {
     setShowFallback(false)
   }
 
+  // Helper to render image from Supabase or legacy path
+  const getImageUrl = (path) => {
+    if (!path) return ''
+    if (path.startsWith('/Pic/')) return path // Legacy local path
+    return supabase.storage.from('project-images').getPublicUrl(path).data.publicUrl
+  }
+
   return (
     <div className="projects-page">
       <header className="projects-hero" ref={heroRef}>
@@ -79,64 +101,55 @@ function Projects() {
 
       <main>
         <section className="projects-grid-section">
-
-          <div className="container" ref={filterRef}>
-            <div className={`filter-controls ${getAnimationClass('slideInUp', filterVisible)}`}>
-              <div className="filter-buttons">
-                {statusOptions.map((status, index) => (
-                  <button
-                    key={status}
-                    className={`filter-btn ${statusFilter === status ? 'active' : ''} button-animation ${filterVisible ? 'animate-visible' : 'animate-hidden'}`}
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                    onClick={() => handleStatusFilter(status)}
-                  >
-                    {status}
-                  </button>
-                ))}
-              </div>
+          {loading ? (
+            <div className="container" style={{ textAlign: 'center', padding: '4rem', color: '#94a3b8' }}>
+              Loading projects...
             </div>
-          </div>
-
-          <div className="container" ref={projectsRef}>
-            <div className="projects-grid">
-              {filteredProjects.map((project, index) => (
-                <div key={project.id} className={`project-card project-card-animation ${projectsVisible.has(index) || showFallback ? 'animate-visible' : 'animate-hidden'}`}>
-                  <div className="project-image">
-                    <img src={project.image} alt={project.title} />
-                    <div className={`status-badge ${getStatusBadgeClass(project.status)}`}>
-                      {project.status}
-                    </div>
-                  </div>
-                  <div className="project-content">
-                    <span className="project-category">{project.category}</span>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <div className="project-footer">
-                      <span className="impact">{project.impact}</span>
-                      <button className="learn-more-btn">Learn More</button>
-                    </div>
+          ) : (
+            <>
+              <div className="container" ref={filterRef}>
+                <div className={`filter-controls ${getAnimationClass('slideInUp', filterVisible)}`}>
+                  <div className="filter-buttons">
+                    {statusOptions.map((status, index) => (
+                      <button
+                        key={status}
+                        className={`filter-btn ${statusFilter === status ? 'active' : ''} button-animation ${filterVisible ? 'animate-visible' : 'animate-hidden'}`}
+                        style={{ transitionDelay: `${index * 100}ms` }}
+                        onClick={() => handleStatusFilter(status)}
+                      >
+                        {status}
+                      </button>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* <section className="get-involved-section">
-          <div className="container">
-            <div className="get-involved-content">
-              <h2>Want to Get Involved?</h2>
-              <p>
-                Join us in creating positive change in our community. Whether you want to volunteer 
-                for existing projects or propose new initiatives, we welcome your participation.
-              </p>
-              <div className="cta-buttons">
-                <button className="btn-primary">Join a Project</button>
-                <button className="btn-secondary">Propose an Idea</button>
               </div>
-            </div>
-          </div>
-        </section> */}
+
+              <div className="container" ref={projectsRef}>
+                <div className="projects-grid">
+                  {filteredProjects.map((project, index) => (
+                    <div key={project.id} className={`project-card project-card-animation ${projectsVisible.has(index) || showFallback ? 'animate-visible' : 'animate-hidden'}`}>
+                      <div className="project-image">
+                        <img src={getImageUrl(project.image_url)} alt={project.title} />
+                        <div className={`status-badge ${getStatusBadgeClass(project.status)}`}>
+                          {project.status}
+                        </div>
+                      </div>
+                      <div className="project-content">
+                        <span className="project-category">{project.category}</span>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                        <div className="project-footer">
+                          <span className="impact">{project.impact}</span>
+                          <button className="learn-more-btn">Learn More</button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
+        </section>
       </main>
     </div>
   )
