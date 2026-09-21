@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../utils/supabase'
-import { LogOut, FolderKanban, Image as ImageIcon } from 'lucide-react'
+import { LogOut, FolderKanban, Image as ImageIcon, Users, UserCheck } from 'lucide-react'
 import ManageProjects from '../../components/Admin/ManageProjects'
 import ManageGallery from '../../components/Admin/ManageGallery'
+import ManageExecutive from '../../components/Admin/ManageExecutive'
+import ManageDirectors from '../../components/Admin/ManageDirectors'
 import './Admin.css'
 
 function AdminDashboard() {
@@ -65,6 +67,22 @@ function AdminDashboard() {
             <ImageIcon size={20} />
             Manage Gallery
           </button>
+
+          <button 
+            className={`admin-nav-item ${activeTab === 'executive' ? 'active' : ''}`}
+            onClick={() => setActiveTab('executive')}
+          >
+            <Users size={20} />
+            Executive Board
+          </button>
+
+          <button 
+            className={`admin-nav-item ${activeTab === 'directors' ? 'active' : ''}`}
+            onClick={() => setActiveTab('directors')}
+          >
+            <UserCheck size={20} />
+            Avenue Directors
+          </button>
         </nav>
 
         <button onClick={handleLogout} className="admin-logout-btn">
@@ -77,6 +95,8 @@ function AdminDashboard() {
       <main className="admin-main-content">
         {activeTab === 'projects' && <ManageProjects />}
         {activeTab === 'gallery' && <ManageGallery />}
+        {activeTab === 'executive' && <ManageExecutive />}
+        {activeTab === 'directors' && <ManageDirectors />}
       </main>
     </div>
   )

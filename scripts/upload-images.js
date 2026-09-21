@@ -53,7 +53,17 @@ async function uploadAndCleanupFolder(localDir, bucketName, tableName) {
 
   for (const file of files) {
     const filePath = path.join(localDir, file)
-    const stat = fs.statSync(filePath)
+    let stat;
+    try {
+      stat = fs.statSync(filePath)
+    } catch (err) {
+      if (err.code === 'ENOENT') {
+        console.log(`File ${file} disappeared before processing. Skipping.`);
+        continue;
+      }
+      console.error(`Error reading ${file}:`, err);
+      continue;
+    }
     
     if (stat.isFile()) {
       try {
@@ -95,9 +105,17 @@ async function uploadAndCleanupFolder(localDir, bucketName, tableName) {
         }
 
         // 3. Delete the local physical file
-        fs.unlinkSync(filePath)
-        successCount++
-        console.log(`Successfully processed and deleted local file: ${file}`)
+        try {
+          fs.unlinkSync(filePath)
+          successCount++
+          console.log(`Successfully processed and deleted local file: ${file}`)
+        } catch (err) {
+           if (err.code === 'ENOENT') {
+             console.log(`File ${file} was already deleted.`);
+           } else {
+             throw err;
+           }
+        }
 
       } catch (err) {
         console.error(`Error processing ${file}:`, err)

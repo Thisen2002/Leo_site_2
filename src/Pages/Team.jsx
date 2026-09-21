@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
+import { supabase } from '../utils/supabase'
 import './Team.css'
 import '../utils/scrollAnimations.css'
 import { 
@@ -8,37 +9,62 @@ import {
   getAnimationClass,
   ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
-import executiveBoard from '../json files/executiveBoard.json'
-import avenuedirectors from '../json files/avenuedirectors.json'
 
 function Team() {
   const { teamType } = useParams()
   const location = useLocation()
   
+  const [executiveBoard, setExecutiveBoard] = useState([])
+  const [avenueDirectors, setAvenueDirectors] = useState([])
+  const [loading, setLoading] = useState(true)
+
   // Determine which team to show based on URL
   const getTeamType = () => {
     if (teamType === 'executive') return 'executive'
     if (teamType === 'avenue-directors') return 'avenue-directors'
-    // Default to executive if no specific type or just /team
     return 'executive'
   }
   
   const currentTeamType = getTeamType()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true)
+      
+      const [excoRes, bodRes] = await Promise.all([
+        supabase.from('executive_board').select('*').order('id', { ascending: true }),
+        supabase.from('avenue_directors').select('*').order('id', { ascending: true })
+      ])
+
+      if (!excoRes.error) setExecutiveBoard(excoRes.data)
+      if (!bodRes.error) setAvenueDirectors(bodRes.data)
+      
+      setLoading(false)
+    }
+
+    fetchData()
+  }, [])
   
   // Animation hooks
   const [headerRef, headerVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero);
   const [leadershipRef, leadershipVisible] = useStaggerAnimation(2, 200);
-  const [executiveRef, executiveVisible] = useStaggerAnimation(executiveBoard.filter(m => !['President', 'Past President'].includes(m.position)).length, 100);
   
-  // Calculate total number of avenue directors members
-  const totalAvenueMembers = avenuedirectors.reduce((total, avenue) => total + avenue.members.length, 0);
-  console.log('Total avenue members:', totalAvenueMembers); // Debug log
+  const otherExecutivesCount = executiveBoard.filter(m => !['President', 'Past President'].includes(m.position)).length;
+  const [executiveRef, executiveVisible] = useStaggerAnimation(otherExecutivesCount, 100);
+  
+  const totalAvenueMembers = avenueDirectors.length;
   
   // Use shorter delay for mobile devices to improve performance
   const isMobile = window.innerWidth <= 768;
   const isSmallMobile = window.innerWidth <= 480;
-  const staggerDelay = isSmallMobile ? 25 : isMobile ? 50 : 100; // Progressive delay reduction
+  const staggerDelay = isSmallMobile ? 25 : isMobile ? 50 : 100;
   const [avenueRef, avenueVisible] = useStaggerAnimation(totalAvenueMembers, staggerDelay);
+
+  const getImageUrl = (bucket, path) => {
+    if (!path) return '';
+    if (path.startsWith('/Pic/')) return path;
+    return supabase.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+  }
   
   // Render Executive Board
   const renderExecutiveBoard = () => (
@@ -57,19 +83,27 @@ function Team() {
               .map((member, index) => (
                 <div key={member.id} className={`member-card executive-card leadership-card team-member-animation ${leadershipVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}>
                   <div className="member-image">
-                    <img src={member.image} alt={member.name} />
+                    <img 
+                      src={getImageUrl('exco-images', member.image_url)} 
+                      alt={member.name}
+                      onError={(e) => { e.target.src = 'https://via.placeholder.com/300x300/1e3c72/ffffff?text=' + member.name.charAt(0) }} 
+                    />
                     <div className="member-overlay">
                       <div className="member-social">
-                        <a href={`mailto:${member.email}`} className="social-link email-link">
-                          <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                          </svg>
-                        </a>
-                        <a href={member.linkedin} className="social-link linkedin-link" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </a>
+                        {member.email && (
+                          <a href={`mailto:${member.email}`} className="social-link email-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                          </a>
+                        )}
+                        {member.linkedin && (
+                          <a href={member.linkedin} className="social-link linkedin-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -82,7 +116,7 @@ function Team() {
               ))}
           </div>
         </div>
-
+        
         {/* Other Executive Members - 3 per row */}
         <div className="other-members-section" ref={executiveRef}>
           <div className="team-grid executive-grid three-column">
@@ -91,26 +125,34 @@ function Team() {
               .map((member, index) => (
                 <div key={member.id} className={`member-card executive-card team-member-animation ${executiveVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}>
                   <div className="member-image">
-                    <img src={member.image} alt={member.name} />
+                    <img 
+                      src={getImageUrl('exco-images', member.image_url)} 
+                      alt={member.name}
+                      onError={(e) => { e.target.src = 'https://via.placeholder.com/300x300/1e3c72/ffffff?text=' + member.name.charAt(0) }} 
+                    />
                     <div className="member-overlay">
                       <div className="member-social">
-                        <a href={`mailto:${member.email}`} className="social-link email-link">
-                          <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                          </svg>
-                        </a>
-                        <a href={member.linkedin} className="social-link linkedin-link" target="_blank" rel="noopener noreferrer">
-                          <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </a>
+                        {member.email && (
+                          <a href={`mailto:${member.email}`} className="social-link email-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                          </a>
+                        )}
+                        {member.linkedin && (
+                          <a href={member.linkedin} className="social-link linkedin-link" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
                   <div className="member-content">
                     <h3>{member.name}</h3>
                     <p className="position">{member.position}</p>
-                    <p className="bio">{member.bio}</p>
+                    {member.bio && <p className="bio">{member.bio}</p>}
                   </div>
                 </div>
               ))}
@@ -122,36 +164,18 @@ function Team() {
   
   // Render Avenue Directors
   const renderAvenueDirectors = () => {
-    // Flatten all members from all avenues into a single array with avenue info
-    const allMembers = avenuedirectors.reduce((acc, avenue) => {
-      const membersWithAvenue = avenue.members.map(member => ({
-        ...member,
-        avenue: avenue.avenue
-      }));
-      return acc.concat(membersWithAvenue);
-    }, []);
-
     // Fallback: Show all items after 3 seconds if animations haven't triggered
     const [showFallback, setShowFallback] = useState(false);
     useEffect(() => {
       const timer = setTimeout(() => {
-        if (avenueVisible.size < allMembers.length) {
-          console.log(`Fallback triggered: ${avenueVisible.size}/${allMembers.length} members visible`);
-          console.log('Mobile info:', {
-            isMobile,
-            isSmallMobile,
-            staggerDelay,
-            screenWidth: window.innerWidth
-          });
+        if (avenueVisible.size < avenueDirectors.length) {
           setShowFallback(true);
         }
       }, 3000);
       return () => clearTimeout(timer);
-    }, [allMembers.length, avenueVisible.size]);
+    }, [avenueDirectors.length, avenueVisible.size]);
 
     return (
-      
-      
       <section className="avenue-directors-section" ref={headerRef}>
         <div className="container">
           <div className="section-header">
@@ -160,14 +184,14 @@ function Team() {
           </div>
           
           <div className="team-grid avenue-grid-flat" ref={avenueRef}>
-            {allMembers.map((member, memberIndex) => (
-              <div key={memberIndex} className={`member-card avenue-card team-member-animation ${avenueVisible.has(memberIndex) || showFallback ? 'animate-visible' : 'animate-hidden'}`}>
+            {avenueDirectors.map((member, memberIndex) => (
+              <div key={member.id} className={`member-card avenue-card team-member-animation ${avenueVisible.has(memberIndex) || showFallback ? 'animate-visible' : 'animate-hidden'}`}>
                 <div className="member-image">
                   <img 
-                    src={member.image} 
+                    src={getImageUrl('bod-images', member.image_url)} 
                     alt={member.name}
                     onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/120x120/1e3c72/ffffff?text=' + member.name.split(' ').map(n => n[0]).join('')
+                      e.target.src = 'https://via.placeholder.com/300x300/1e3c72/ffffff?text=' + member.name.charAt(0)
                     }}
                   />
                   <div className="member-overlay">
@@ -179,11 +203,13 @@ function Team() {
                           </svg>
                         </a>
                       )}
-                      <a href={member.linkedin} className="social-link linkedin-link" target="_blank" rel="noopener noreferrer">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                      </a>
+                      {member.linkedin && (
+                        <a href={member.linkedin} className="social-link linkedin-link" target="_blank" rel="noopener noreferrer">
+                          <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -191,7 +217,6 @@ function Team() {
                   <h3>{member.name}</h3>
                   <p className="position">{member.position}</p>
                   <p className="avenue">{member.avenue}</p>
-                  {member.bio && <p className="bio">{member.bio}</p>}
                 </div>
               </div>
             ))}
@@ -199,6 +224,10 @@ function Team() {
         </div>
       </section>
     )
+  }
+
+  if (loading) {
+    return <div style={{ minHeight: '60vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Loading team data...</div>
   }
 
   return (
