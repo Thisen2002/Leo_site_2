@@ -39,7 +39,6 @@ function Gallery() {
 
   const getImageUrl = (path) => {
     if (!path) return ''
-    if (path.startsWith('/Pic/')) return path // Legacy local path
     return supabase.storage.from('gallery-images').getPublicUrl(path).data.publicUrl
   }
 

@@ -79,10 +79,9 @@ function Projects() {
     setShowFallback(false)
   }
 
-  // Helper to render image from Supabase or legacy path
+  // Helper to render image from Supabase
   const getImageUrl = (path) => {
     if (!path) return ''
-    if (path.startsWith('/Pic/')) return path // Legacy local path
     return supabase.storage.from('project-images').getPublicUrl(path).data.publicUrl
   }
 

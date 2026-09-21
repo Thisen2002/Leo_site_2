@@ -161,9 +161,8 @@ function ManageGallery() {
               aspectRatio: '1',
               backgroundColor: 'rgba(255,255,255,0.05)'
             }}>
-              {/* If it's a legacy JSON image starting with /Pic/, load directly. Otherwise generate public URL */}
               <img 
-                src={img.image_url.startsWith('/Pic/') ? img.image_url : supabase.storage.from('gallery-images').getPublicUrl(img.image_url).data.publicUrl} 
+                src={supabase.storage.from('gallery-images').getPublicUrl(img.image_url).data.publicUrl} 
                 alt="Gallery" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
