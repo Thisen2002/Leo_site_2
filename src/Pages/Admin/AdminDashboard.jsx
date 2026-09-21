@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../utils/supabase'
-import { LogOut, FolderKanban, Image as ImageIcon, Users, UserCheck } from 'lucide-react'
+import { LogOut, FolderKanban, Image as ImageIcon, Users, UserCheck, BookOpen } from 'lucide-react'
 import ManageProjects from '../../components/Admin/ManageProjects'
 import ManageGallery from '../../components/Admin/ManageGallery'
 import ManageExecutive from '../../components/Admin/ManageExecutive'
 import ManageDirectors from '../../components/Admin/ManageDirectors'
+import ManageResearch from '../../components/Admin/ManageResearch'
 import './Admin.css'
 
 function AdminDashboard() {
@@ -83,6 +84,14 @@ function AdminDashboard() {
             <UserCheck size={20} />
             Avenue Directors
           </button>
+
+          <button 
+            className={`admin-nav-item ${activeTab === 'research' ? 'active' : ''}`}
+            onClick={() => setActiveTab('research')}
+          >
+            <BookOpen size={20} />
+            Research Papers
+          </button>
         </nav>
 
         <button onClick={handleLogout} className="admin-logout-btn">
@@ -97,6 +106,7 @@ function AdminDashboard() {
         {activeTab === 'gallery' && <ManageGallery />}
         {activeTab === 'executive' && <ManageExecutive />}
         {activeTab === 'directors' && <ManageDirectors />}
+        {activeTab === 'research' && <ManageResearch />}
       </main>
     </div>
   )
