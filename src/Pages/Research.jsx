@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from 'react'
+import { supabase } from '../utils/supabase'
 import './Research.css'
 import '../utils/scrollAnimations.css'
 import {
@@ -7,19 +9,38 @@ import {
     ANIMATION_CONFIGS
 } from '../utils/scrollAnimations'
 
-const researchPdfs = [
-    {
-        fileName: 'Factors Contributing to Emergency Care among Cardiac Patients and Strategies for Improving Rapid Response in the Kandy District.pdf'
-    }
-]
-
-const getFileUrl = (fileName) => `/Research/${encodeURIComponent(fileName)}`
-
-const formatTitle = (fileName) => fileName.replace(/\.pdf$/i, '')
-
 function Research() {
+    const [researchPdfs, setResearchPdfs] = useState([])
+    const [loading, setLoading] = useState(true)
     const [heroRef, heroVisible] = useScrollAnimation(ANIMATION_CONFIGS.hero)
-    const [libraryRef, libraryVisible] = useStaggerAnimation(researchPdfs.length || 1, 120)
+    
+    // We use a safe length or default to 1 for the stagger animation hook
+    const [libraryRef, libraryVisible] = useStaggerAnimation(Math.max(researchPdfs.length, 1), 120)
+
+    useEffect(() => {
+        const fetchResearch = async () => {
+            setLoading(true)
+            const { data, error } = await supabase
+                .from('research_papers')
+                .select('*')
+                .order('created_at', { ascending: false })
+                
+            if (error) {
+                console.error('Error fetching research papers:', error)
+            } else {
+                setResearchPdfs(data || [])
+            }
+            setLoading(false)
+        }
+
+        fetchResearch()
+    }, [])
+
+    const getFileUrl = (path) => {
+        if (!path) return '';
+        if (path.startsWith('/Research/')) return path;
+        return supabase.storage.from('research-files').getPublicUrl(path).data.publicUrl;
+    }
 
     return (
         <div className="research-page">
@@ -40,11 +61,15 @@ function Research() {
             <main>
                 <section className="research-library-section" ref={libraryRef}>
                     <div className="container">
-                        <h2 className={getAnimationClass('slideInUp', researchPdfs.length > 0)}>
+                        <h2 className={getAnimationClass('slideInUp', !loading && researchPdfs.length > 0)}>
                             Available PDFs
                         </h2>
 
-                        {researchPdfs.length === 0 ? (
+                        {loading ? (
+                            <div className="empty-state">
+                                <p>Loading research papers...</p>
+                            </div>
+                        ) : researchPdfs.length === 0 ? (
                             <div className="empty-state">
                                 <p>No research PDFs available right now.</p>
                             </div>
@@ -52,17 +77,17 @@ function Research() {
                             <div className="pdf-grid">
                                 {researchPdfs.map((paper, index) => (
                                     <article
-                                        key={paper.fileName}
+                                        key={paper.id}
                                         className={`pdf-card card-animation ${libraryVisible.has(index) ? 'animate-visible' : 'animate-hidden'}`}
                                     >
                                         <div className="pdf-meta">PDF Document</div>
-                                        <h3>{formatTitle(paper.fileName)}</h3>
-                                        <p className="file-name">{paper.fileName}</p>
+                                        <h3>{paper.title}</h3>
+                                        <p className="file-name">{paper.file_name}</p>
 
                                         <div className="pdf-actions">
                                             <a
                                                 className="secondary-btn"
-                                                href={getFileUrl(paper.fileName)}
+                                                href={getFileUrl(paper.file_url)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
@@ -70,8 +95,8 @@ function Research() {
                                             </a>
                                             <a
                                                 className="primary-btn"
-                                                href={getFileUrl(paper.fileName)}
-                                                download={paper.fileName}
+                                                href={getFileUrl(paper.file_url)}
+                                                download={paper.file_name}
                                             >
                                                 Download
                                             </a>
