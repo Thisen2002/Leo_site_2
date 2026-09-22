@@ -8,6 +8,7 @@ import ManageExecutive from '../../components/Admin/ManageExecutive'
 import ManageDirectors from '../../components/Admin/ManageDirectors'
 import ManageResearch from '../../components/Admin/ManageResearch'
 import ManageHero from '../../components/Admin/ManageHero'
+import ManageBlogs from '../../components/Admin/ManageBlogs'
 import './Admin.css'
 
 function AdminDashboard() {
@@ -52,9 +53,9 @@ function AdminDashboard() {
         <div className="admin-sidebar-header">
           <h3>Admin Panel</h3>
         </div>
-        
+
         <nav className="admin-nav">
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === 'hero' ? 'active' : ''}`}
             onClick={() => setActiveTab('hero')}
           >
@@ -62,15 +63,15 @@ function AdminDashboard() {
             Hero Section
           </button>
 
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === 'projects' ? 'active' : ''}`}
             onClick={() => setActiveTab('projects')}
           >
             <FolderKanban size={20} />
             Manage Projects
           </button>
-          
-          <button 
+
+          <button
             className={`admin-nav-item ${activeTab === 'gallery' ? 'active' : ''}`}
             onClick={() => setActiveTab('gallery')}
           >
@@ -78,7 +79,7 @@ function AdminDashboard() {
             Manage Gallery
           </button>
 
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === 'executive' ? 'active' : ''}`}
             onClick={() => setActiveTab('executive')}
           >
@@ -86,7 +87,7 @@ function AdminDashboard() {
             Executive Board
           </button>
 
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === 'directors' ? 'active' : ''}`}
             onClick={() => setActiveTab('directors')}
           >
@@ -94,12 +95,20 @@ function AdminDashboard() {
             Avenue Directors
           </button>
 
-          <button 
+          <button
             className={`admin-nav-item ${activeTab === 'research' ? 'active' : ''}`}
             onClick={() => setActiveTab('research')}
           >
             <BookOpen size={20} />
             Research Papers
+          </button>
+
+          <button
+            className={`admin-nav-item ${activeTab === 'blogs' ? 'active' : ''}`}
+            onClick={() => setActiveTab('blogs')}
+          >
+            <BookOpen size={20} />
+            Blogs
           </button>
         </nav>
 
@@ -117,6 +126,7 @@ function AdminDashboard() {
         {activeTab === 'executive' && <ManageExecutive />}
         {activeTab === 'directors' && <ManageDirectors />}
         {activeTab === 'research' && <ManageResearch />}
+        {activeTab === 'blogs' && <ManageBlogs />}
       </main>
     </div>
   )
