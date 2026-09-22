@@ -8,6 +8,7 @@ import ManageExecutive from '../../components/Admin/ManageExecutive'
 import ManageDirectors from '../../components/Admin/ManageDirectors'
 import ManageResearch from '../../components/Admin/ManageResearch'
 import ManageHero from '../../components/Admin/ManageHero'
+import ManageBlogs from '../../components/Admin/ManageBlogs'
 import './Admin.css'
 
 function AdminDashboard() {
@@ -101,6 +102,14 @@ function AdminDashboard() {
             <BookOpen size={20} />
             Research Papers
           </button>
+
+          <button 
+            className={`admin-nav-item ${activeTab === 'blogs' ? 'active' : ''}`}
+            onClick={() => setActiveTab('blogs')}
+          >
+            <BookOpen size={20} />
+            Blogs
+          </button>
         </nav>
 
         <button onClick={handleLogout} className="admin-logout-btn">
@@ -117,6 +126,7 @@ function AdminDashboard() {
         {activeTab === 'executive' && <ManageExecutive />}
         {activeTab === 'directors' && <ManageDirectors />}
         {activeTab === 'research' && <ManageResearch />}
+        {activeTab === 'blogs' && <ManageBlogs />}
       </main>
     </div>
   )
